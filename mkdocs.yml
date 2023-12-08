@@ -1,4 +1,4 @@
-site_name: Dev Guide
+site_name: Airy Dev Guide
 site_description: 'Development guides for CogniPilot'
 site_author: 'CogniPilot Foundation'
 site_url: 'https://airy.cognipilot.org'
@@ -45,12 +45,12 @@ plugins:
   - macros
 
 nav:
-    - Home: index.md
-    - Releases:
-      - Airy:
-        - About Airy: releases/airy/index.md
-        - Getting Started: releases/airy/getting_started/install.md
-      - B Mythical: releases/b-mythical/index.md
+    - Home: releases/airy/index.md
+#    - Releases:
+#      - Airy:
+#        - About Airy: releases/airy/index.md
+    - Getting Started: releases/airy/getting_started/install.md
+#      - B Mythical: releases/b-mythical/index.md
     - Cerebri:
       - About: cerebri/index.md
       - Boards:
@@ -70,6 +70,7 @@ nav:
     - Electrode:
       - Joystick: electrode/joystick.md
       - RVIZ 2: electrode/rviz2.md
+      - Foxglove: electrode/foxglove.md
     - Helmet:
       - About: helmet/index.md
     - Tools:
@@ -80,26 +81,26 @@ nav:
 #      - Sensors: spinali/sensors/sensors.md
 #      - Actuators: spinali/actuators/actuators.md
     - Reference Systems:
-      - MultiCopters:
-        - RDDRONE:
-          - Hardware: reference_systems/rddrone/rddrone.md
-          - Simulation: reference_systems/rddrone/simulation.md
+#      - MultiCopters:
+#        - RDDRONE:
+#          - Hardware: reference_systems/rddrone/rddrone.md
+#          - Simulation: reference_systems/rddrone/simulation.md
       - Rovers:
         - B3RB:
           - Hardware: reference_systems/b3rb/buggy3_revb.md
           - Simulation: reference_systems/b3rb/simulation.md
-        - ELM4:
-          - Hardware: reference_systems/elm4/el_mandadero.md
-          - Simulation: reference_systems/elm4/simulation.md
+#        - ELM4:
+#          - Hardware: reference_systems/elm4/el_mandadero.md
+#          - Simulation: reference_systems/elm4/simulation.md
 #        - MELM:
 #          - Hardware: reference_systems/melm/minimando.md
 #          - Simulation: reference_systems/melm/simulation.md
-    - Resources:
-      - Contribute: resources/contribute.md
-      - CogniPilot Foundation: "https://www.cognipilot.com"
-    - Contributors:
-      - Companies:
-        - NXP: "https://www.nxp.com/"
-        - Rudis Laboratories: "https://www.rudislabs.com/"
-      - Universities:
-        - Purdue: "https://www.purdue.edu/"
+#    - Resources:
+#      - Contribute: resources/contribute.md
+#      - CogniPilot Foundation: "https://www.cognipilot.com"
+#    - Contributors:
+#      - Companies:
+#        - NXP: "https://www.nxp.com/"
+#        - Rudis Laboratories: "https://www.rudislabs.com/"
+#      - Universities:
+#        - Purdue: "https://www.purdue.edu/"
