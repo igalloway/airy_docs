@@ -711,11 +711,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-wifi-system-username-and-password" class="md-nav__link">
-    Configuring WiFi, System Username and Password
+  <a href="#configuring-wifi-system-hostname-username-or-password" class="md-nav__link">
+    Configuring WiFi, System Hostname, Username or Password
   </a>
   
-    <nav class="md-nav" aria-label="Configuring WiFi, System Username and Password">
+    <nav class="md-nav" aria-label="Configuring WiFi, System Hostname, Username or Password">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -726,9 +726,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-system-username-and-password" class="md-nav__link">
-    Configuring System Username and Password
+  <a href="#optional-configuring-system-hostname-username-or-password" class="md-nav__link">
+    OPTIONAL - Configuring System Hostname, Username or Password
   </a>
+  
+    <nav class="md-nav" aria-label="OPTIONAL - Configuring System Hostname, Username or Password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-hostname" class="md-nav__link">
+    Change Hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-username" class="md-nav__link">
+    Change Username
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-password" class="md-nav__link">
+    Change Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1562,11 +1589,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-wifi-system-username-and-password" class="md-nav__link">
-    Configuring WiFi, System Username and Password
+  <a href="#configuring-wifi-system-hostname-username-or-password" class="md-nav__link">
+    Configuring WiFi, System Hostname, Username or Password
   </a>
   
-    <nav class="md-nav" aria-label="Configuring WiFi, System Username and Password">
+    <nav class="md-nav" aria-label="Configuring WiFi, System Hostname, Username or Password">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1577,9 +1604,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-system-username-and-password" class="md-nav__link">
-    Configuring System Username and Password
+  <a href="#optional-configuring-system-hostname-username-or-password" class="md-nav__link">
+    OPTIONAL - Configuring System Hostname, Username or Password
   </a>
+  
+    <nav class="md-nav" aria-label="OPTIONAL - Configuring System Hostname, Username or Password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-hostname" class="md-nav__link">
+    Change Hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-username" class="md-nav__link">
+    Change Username
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-password" class="md-nav__link">
+    Change Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1635,7 +1689,7 @@
 <li>Download the <a href="https://github.com/rudislabs/navqplus-images/releases/latest">pre-built latest Ubuntu 22.04 with ROS2 Humble and CycloneDDS image</a>, exact instructions for that release image are included on the <a href="https://github.com/rudislabs/navqplus-images/releases/latest">release documentation</a> to use in conjunction with this guide.</li>
 <li>Extract the image <code>navqplus-image-&lt;version&gt;.wic</code> from the compressed downloaded file <code>navqplus-image-&lt;version&gt;.wic.zstd</code> and flash it to the <a href="#flashing-the-emmc">EMMC</a>, <a href="https://github.com/rudislabs/navqplus-images/releases/latest">exact copy and paste instructions</a> are on the release page.</li>
 <li><a href="#log-in-for-the-first-time">Log in for the first time</a> by connecting to another computer using the <a href="#usb-to-uart-adapter">USB to UART adatper</a>, <a href="#ethernet">ethernet adapter</a> or <a href="#usb-c-gadget-ethernet">centermost (USB 2) USB-C® port</a>.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
-<li><a href="#configuring-wifi-system-username-and-password">Configure Wifi, System User Name and Password.</a></li>
+<li><a href="#configuring-wifi-system-hostname-username-or-password">Configure Wifi, System User Name and Password.</a></li>
 <li><a href="#connecting-to-navqplus-over-wifi">Connect to NavQPlus over WiFi</a></li>
 <li><a href="#install-cognipilot-through-included-script">Install CogniPilot by running the included installer script.</a></li>
 </ol>
@@ -1652,7 +1706,7 @@
 </code></pre>
 <p><img alt="Found device with uuu." src="../data/uuu_ls.png" title="uuu found device" /></p>
 <p>If it shows that a device is connected, continue to flashing. To flash the board, use the general command below or <a href="https://github.com/rudislabs/navqplus-images/releases/latest">copy and paste the specific command</a> from the release:</p>
-<pre><code class="language-bash">./uuu -b emmc_all navqplus-image-&lt;version&gt;.bin-flash_evk navqplus-image-&lt;version&gt;.wic
+<pre><code class="language-bash">sudo ./uuu -b emmc_all navqplus-image-&lt;version&gt;.bin-flash_evk navqplus-image-&lt;version&gt;.wic
 </code></pre>
 <p>Once this process has finished, make sure that the flash was successfull by comparing to the image below. If so, configure the <a href="#boot-switches">boot switches</a> to boot from eMMC.</p>
 <p><img alt="Successful eMMC flash." src="../data/uuu_emmc.png" title="Flashed eMMC Successfully" /></p>
@@ -1699,51 +1753,77 @@ If using <code>screen</code>:</p>
 <p><strong>To exit <code>screen</code> cleanly when done press simultaneously <code>Ctrl Shift A</code> followed by typing <code>k</code> then <code>y</code>.</strong></p>
 </div>
 <h3 id="ethernet">Ethernet</h3>
-<p>Connect the included IX Industrial Ethernet cable to NavQPlus, and connect the RJ45 connector to another computer, switch, or router on the local network. Log into NavQPlus over SSH. The default hostname for NavQPlus is imx8mpnavq. To SSH into NavQPlus, run the following command:</p>
-<pre><code class="language-bash">ssh &lt;username&gt;@imx8mpnavq.local
+<p>Connect the included IX Industrial Ethernet cable to NavQPlus, and connect the RJ45 connector to another computer, switch, or router on the local network. Log into NavQPlus over SSH. To SSH into NavQPlus, run the following command:</p>
+<pre><code class="language-bash">ssh &lt;username&gt;@&lt;hostname&gt;.local
 </code></pre>
 <p>Or depending on network setup:</p>
-<pre><code class="language-bash">ssh &lt;username&gt;@imx8mpnavq.local
+<pre><code class="language-bash">ssh &lt;username&gt;@&lt;hostname&gt;
 </code></pre>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Default hostname is <code>imx8mpnavq</code>. The <a href="#change-hostname">hostname can be changed</a> and is suggested to be changed if running multiple NavQPlus on the same network.</strong></p>
+</div>
 <h3 id="usb-c-gadget-ethernet">USB-C® Gadget Ethernet</h3>
 <p>The IP address of the <code>usb0</code> network interface on NavQPlus is statically assigned to 192.168.186.3. To use the USB-C® gadget ethernet to connect to the NavQPlus, assign a static IP on the connecting computers existing gadget ethernet interface. The network configuration is as follows:</p>
 <p><strong>IP Address:</strong> 192.168.186.2</p>
 <p><strong>Network Mask:</strong> 255.255.255.0</p>
 <p><img alt="Network Manager connection profile." src="../data/usb_network.png" title="USB-C® gadget ethernet network connection" /></p>
 <p>Once USB-C® gadget ethernet interface is set up on the connected computer, SSH by running:</p>
-<pre><code class="language-bash">ssh &lt;username&gt;@imx8mpnavq.local
+<pre><code class="language-bash">ssh &lt;username&gt;@&lt;hostname&gt;.local
 </code></pre>
-<h2 id="configuring-wifi-system-username-and-password">Configuring WiFi, System Username and Password</h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Default hostname is <code>imx8mpnavq</code>. The <a href="#change-hostname">hostname can be changed</a> and is suggested to be changed if running multiple NavQPlus on the same network.</strong></p>
+</div>
+<h2 id="configuring-wifi-system-hostname-username-or-password">Configuring WiFi, System Hostname, Username or Password</h2>
 <h3 id="configuring-wifi-on-navqplus">Configuring WiFi on NavQPlus</h3>
 <p>To connect NavQPlus to a WiFi network, use the <code>nmcli</code> command. The interface is relatively straightforward, to connect with <code>nmcli</code>, run the following command:</p>
 <pre><code class="language-bash">sudo nmcli device wifi connect &lt;network_name&gt; password &quot;&lt;password&gt;&quot;
 </code></pre>
+<p>If struggling to connect to a network, see if it is visible by running:</p>
+<pre><code>sudo nmcli device wifi list
+</code></pre>
 <p>Once connected to the WiFi network the NavQPlus will continue to connect to that network even after a reboot.</p>
-<h3 id="configuring-system-username-and-password">Configuring System Username and Password</h3>
-<p>To change the default username and password, use the commands below.</p>
-<p>Username:</p>
+<p>To see what Wifi network the NavQPlus is currently connected to you can run without <code>sudo</code>:</p>
+<pre><code class="language-bash">nmcli device wifi connect &lt;network_name&gt; password &quot;&lt;password&gt;&quot;
+</code></pre>
+<p>Or if running with <code>sudo</code> it will be the network preceeded with a star.</p>
+<h3 id="optional-configuring-system-hostname-username-or-password">OPTIONAL - Configuring System Hostname, Username or Password</h3>
+<p>Optionally, to change the default hostname, username, or password, use the commands below.</p>
+<h4 id="change-hostname">Change Hostname</h4>
+<pre><code class="language-bash">hostnamectl set-hostname &lt;new_hostname&gt;
+</code></pre>
+<h4 id="change-username">Change Username</h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Changing the <code>username</code> can be dangerous and possibly result in a broken system state requiring a re-flash.</strong></p>
+</div>
 <pre><code class="language-bash">usermod -l &lt;new_username&gt; user
 mv /home/user /home/&lt;new_username&gt;
 </code></pre>
-<p>Password:</p>
+<h4 id="change-password">Change Password</h4>
 <pre><code class="language-bash">passwd
 </code></pre>
 <h2 id="connecting-to-navqplus-over-wifi">Connecting to NavQPlus over WiFi</h2>
 <p>Once setup to connect over a local WiFi network, SSH into the NavQPlus over WiFi by running:</p>
-<pre><code class="language-bash">ssh &lt;username&gt;@imx8mpnavq.local
+<pre><code class="language-bash">ssh &lt;username&gt;@&lt;hostname&gt;.local
 </code></pre>
 <p>Or depending on network setup:</p>
-<pre><code class="language-bash">ssh &lt;username&gt;@imx8mpnavq
+<pre><code class="language-bash">ssh &lt;username&gt;@&lt;hostname&gt;
 </code></pre>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Default hostname is <code>imx8mpnavq</code>. The <a href="#change-hostname">hostname can be changed</a> and is suggested to be changed if running multiple NavQPlus on the same network.</strong></p>
+</div>
 <h2 id="install-cognipilot-through-included-script">Install CogniPilot through included script</h2>
 <p>Included in the image is an installation script that auto-updates when run. Before running make sure that the NavQPlus is connected to the internet on a network that allows it to download from github and Ubuntu servers.</p>
 <p>In the home directory there is a simple helper script that downloads and runs the latest <a href="https://github.com/CogniPilot/helmet/blob/main/install/navqplus_install.sh">CogniPilot NavQPlus installer</a>.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p><strong>If you want to use <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH keys</a> with github on the NavQPlus you must first add or create them on the device.</strong></p>
+<p><strong>If you want to use <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH keys</a> with github on the NavQPlus you must first add or create them on the device. Otherwise you will need to answer <code>n</code> when asked to clone using already setup github ssh keys.</strong></p>
 </div>
 <p>Run the installer script:</p>
-<pre><code class="language-bash">./install_cognipilot
+<pre><code class="language-bash">./install_cognipilot.sh
 </code></pre>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
