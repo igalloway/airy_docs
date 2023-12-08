@@ -12,7 +12,7 @@
 1. Download the [pre-built latest Ubuntu 22.04 with ROS2 Humble and CycloneDDS image](https://github.com/rudislabs/navqplus-images/releases/latest), exact instructions for that release image are included on the [release documentation](https://github.com/rudislabs/navqplus-images/releases/latest) to use in conjunction with this guide.
 2. Extract the image `navqplus-image-<version>.wic` from the compressed downloaded file `navqplus-image-<version>.wic.zstd` and flash it to the [EMMC](#flashing-the-emmc), [exact copy and paste instructions](https://github.com/rudislabs/navqplus-images/releases/latest) are on the release page.
 3. [Log in for the first time](#log-in-for-the-first-time) by connecting to another computer using the [USB to UART adatper](#usb-to-uart-adapter), [ethernet adapter](#ethernet) or [centermost (USB 2) USB-C® port](#usb-c-gadget-ethernet).[^2]
-4. [Configure Wifi, System User Name and Password.](#configuring-wifi-system-username-and-password)
+4. [Configure Wifi, System User Name and Password.](#configuring-wifi-system-hostname-username-or-password)
 5. [Connect to NavQPlus over WiFi](#connecting-to-navqplus-over-wifi)
 6. [Install CogniPilot by running the included installer script.](#install-cognipilot-through-included-script)
 
@@ -42,7 +42,7 @@ Run the following command to make sure that the NavQPlus is recognized by `uuu`:
 If it shows that a device is connected, continue to flashing. To flash the board, use the general command below or [copy and paste the specific command](https://github.com/rudislabs/navqplus-images/releases/latest) from the release:
 
 ```bash
-./uuu -b emmc_all navqplus-image-<version>.bin-flash_evk navqplus-image-<version>.wic
+sudo ./uuu -b emmc_all navqplus-image-<version>.bin-flash_evk navqplus-image-<version>.wic
 ```
 
 Once this process has finished, make sure that the flash was successfull by comparing to the image below. If so, configure the [boot switches](#boot-switches) to boot from eMMC.
@@ -82,17 +82,20 @@ screen /dev/ttyUSB<#> 115200
     **To exit `screen` cleanly when done press simultaneously `Ctrl Shift A` followed by typing `k` then `y`.**
 
 ### Ethernet
-Connect the included IX Industrial Ethernet cable to NavQPlus, and connect the RJ45 connector to another computer, switch, or router on the local network. Log into NavQPlus over SSH. The default hostname for NavQPlus is imx8mpnavq. To SSH into NavQPlus, run the following command:
+Connect the included IX Industrial Ethernet cable to NavQPlus, and connect the RJ45 connector to another computer, switch, or router on the local network. Log into NavQPlus over SSH. To SSH into NavQPlus, run the following command:
 
 ```bash
-ssh <username>@imx8mpnavq.local
+ssh <username>@<hostname>.local
 ```
 
 Or depending on network setup:
 
 ```bash
-ssh <username>@imx8mpnavq.local
+ssh <username>@<hostname>
 ```
+
+!!! important
+    **Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.**
 
 ### USB-C® Gadget Ethernet
 The IP address of the `usb0` network interface on NavQPlus is statically assigned to 192.168.186.3. To use the USB-C® gadget ethernet to connect to the NavQPlus, assign a static IP on the connecting computers existing gadget ethernet interface. The network configuration is as follows:
@@ -104,14 +107,15 @@ The IP address of the `usb0` network interface on NavQPlus is statically assigne
 
 ![Network Manager connection profile.](data/usb_network.png "USB-C® gadget ethernet network connection")
 
-
 Once USB-C® gadget ethernet interface is set up on the connected computer, SSH by running:
 
 ```bash
-ssh <username>@imx8mpnavq.local
+ssh <username>@<hostname>.local
 ```
+!!! important
+    **Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.**
 
-## Configuring WiFi, System Username and Password
+## Configuring WiFi, System Hostname, Username or Password
 
 ### Configuring WiFi on NavQPlus
 To connect NavQPlus to a WiFi network, use the `nmcli` command. The interface is relatively straightforward, to connect with `nmcli`, run the following command:
@@ -120,19 +124,40 @@ To connect NavQPlus to a WiFi network, use the `nmcli` command. The interface is
 sudo nmcli device wifi connect <network_name> password "<password>"
 ```
 
+If struggling to connect to a network, see if it is visible by running:
+
+```
+sudo nmcli device wifi list
+```
+
 Once connected to the WiFi network the NavQPlus will continue to connect to that network even after a reboot.
 
-### Configuring System Username and Password
+To see what Wifi network the NavQPlus is currently connected to you can run without `sudo`:
 
-To change the default username and password, use the commands below.
+```bash
+nmcli device wifi connect <network_name> password "<password>"
+```
 
-Username:
+Or if running with `sudo` it will be the network preceeded with a star.
+
+### OPTIONAL - Configuring System Hostname, Username or Password
+
+Optionally, to change the default hostname, username, or password, use the commands below.
+
+#### Change Hostname
+```bash
+hostnamectl set-hostname <new_hostname>
+```
+
+#### Change Username
+!!! warning
+    **Changing the `username` can be dangerous and possibly result in a broken system state requiring a re-flash.**
 ```bash
 usermod -l <new_username> user
 mv /home/user /home/<new_username>
 ```
 
-Password:
+#### Change Password
 ```bash
 passwd
 ```
@@ -141,14 +166,17 @@ passwd
 Once setup to connect over a local WiFi network, SSH into the NavQPlus over WiFi by running:
 
 ```bash
-ssh <username>@imx8mpnavq.local
+ssh <username>@<hostname>.local
 ```
 
 Or depending on network setup:
 
 ```bash
-ssh <username>@imx8mpnavq
+ssh <username>@<hostname>
 ```
+
+!!! important
+    **Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.**
 
 ## Install CogniPilot through included script
 
@@ -157,11 +185,11 @@ Included in the image is an installation script that auto-updates when run. Befo
 In the home directory there is a simple helper script that downloads and runs the latest [CogniPilot NavQPlus installer](https://github.com/CogniPilot/helmet/blob/main/install/navqplus_install.sh).
 
 !!! attention
-    **If you want to use [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) with github on the NavQPlus you must first add or create them on the device.**
+    **If you want to use [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) with github on the NavQPlus you must first add or create them on the device. Otherwise you will need to answer `n` when asked to clone using already setup github ssh keys.**
 
 Run the installer script:
 ```bash
-./install_cognipilot
+./install_cognipilot.sh
 ```
 
 !!! attention
