@@ -18,6 +18,7 @@ theme:
   favicon: assets/CogniPilotLogoFavicon.png
   features:
     - content.code.copy
+    - content.code.annotate
 
 extra_css:
   - stylesheets/cognipilot-palette.css
@@ -45,19 +46,16 @@ plugins:
   - macros
 
 nav:
-    - Home: releases/airy/index.md
-#    - Releases:
-#      - Airy:
-#        - About Airy: releases/airy/index.md
-    - Getting Started: releases/airy/getting_started/install.md
-#      - B Mythical: releases/b-mythical/index.md
+    - Home: index.md
+    
+    - Getting Started: getting_started/install.md
     - Cerebri:
       - About: cerebri/index.md
       - Boards:
         - NXP® VMU RT1170: cerebri/boards/nxp_vmu_rt1170.md
         - NXP® MR CANHUBK3: cerebri/boards/nxp_mr_canhubk3.md
       - Platforms:
-        - MultiCopters: cerebri/platforms/multicopters.md
+#        - MultiCopters: cerebri/platforms/multicopters.md
         - Rovers: cerebri/platforms/rovers.md
     - Cranium:
       - Corti: cranium/corti/corti.md
@@ -68,6 +66,7 @@ nav:
     - Dream:
       - Worlds: dream/worlds/worlds.md
     - Electrode:
+      - About: electrode/about.md
       - Joystick: electrode/joystick.md
       - RVIZ 2: electrode/rviz2.md
       - Foxglove: electrode/foxglove.md
@@ -87,7 +86,7 @@ nav:
 #          - Simulation: reference_systems/rddrone/simulation.md
       - Rovers:
         - B3RB:
-          - Hardware: reference_systems/b3rb/buggy3_revb.md
+          - Hardware: reference_systems/b3rb/hardware.md
           - Simulation: reference_systems/b3rb/simulation.md
 #        - ELM4:
 #          - Hardware: reference_systems/elm4/el_mandadero.md
@@ -95,12 +94,4 @@ nav:
 #        - MELM:
 #          - Hardware: reference_systems/melm/minimando.md
 #          - Simulation: reference_systems/melm/simulation.md
-#    - Resources:
-#      - Contribute: resources/contribute.md
-#      - CogniPilot Foundation: "https://www.cognipilot.com"
-#    - Contributors:
-#      - Companies:
-#        - NXP: "https://www.nxp.com/"
-#        - Rudis Laboratories: "https://www.rudislabs.com/"
-#      - Universities:
-#        - Purdue: "https://www.purdue.edu/"
+    - Releases: "https://cognipilot.org/"
