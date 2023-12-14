@@ -2,7 +2,7 @@
 
 ## Example of Navigation
 <video controls>
-  <source src="../b3rb.mp4" type="video/mp4">
+  <source src="../videos/b3rb.mp4" type="video/mp4">
 </video>
 
 ## Status Sounds
@@ -15,7 +15,7 @@ These sounds allow for audio based system diagnosis.
 Startup sound signifies the system has booted.
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../airy.mp3"></source>
+  <source type="audio/mp3" src="../sounds/airy.mp3"></source>
 </audio>
 
 ### **State Change Request Sounds**
@@ -24,7 +24,7 @@ Startup sound signifies the system has booted.
 Low tone followed by mid-high-low-mid-high sinusoid.
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../reject.mp3"></source>
+  <source type="audio/mp3" src="../sounds/reject.mp3"></source>
 </audio>
 
 ### **Mode Sounds**
@@ -33,21 +33,21 @@ Low tone followed by mid-high-low-mid-high sinusoid.
 Morse Code ***1*** for mode enum ***(. - - - -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../manual.mp3"></source>
+  <source type="audio/mp3" src="../sounds/manual.mp3"></source>
 </audio>
 
 #### CMD_VEL Sound
 Morse Code ***3*** for mode enum ***(. . . - -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../cmd_vel.mp3"></source>
+  <source type="audio/mp3" src="../sounds/cmd_vel.mp3"></source>
 </audio>
 
 #### Calibration Sound
 Morse Code ***4*** for mode enum ***(. . . . -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../calibration.mp3"></source>
+  <source type="audio/mp3" src="../sounds/calibration.mp3"></source>
 </audio>
 
 ### **Safety Sounds**
@@ -56,14 +56,14 @@ Morse Code ***4*** for mode enum ***(. . . . -)***
 Morse Code ***S*** increasing long octives ***(- - -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../safety_off.mp3"></source>
+  <source type="audio/mp3" src="../sounds/safety_off.mp3"></source>
 </audio>
 
 #### Safety On Sound
 Morse Code ***S*** decreasing long octives ***(- - -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../safety_on.mp3"></source>
+  <source type="audio/mp3" src="../sounds/safety_on.mp3"></source>
 </audio>
 
 ### **Arming Sounds**
@@ -72,14 +72,14 @@ Morse Code ***S*** decreasing long octives ***(- - -)***
 Morse Code ***A*** mid-high tone ***(. -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../arm.mp3"></source>
+  <source type="audio/mp3" src="../sounds/arm.mp3"></source>
 </audio>
 
 #### Disarm Sound
 Morse Code ***A*** mid-low tone ***(. -)***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../disarm.mp3"></source>
+  <source type="audio/mp3" src="../sounds/disarm.mp3"></source>
 </audio>
 
 ### **Connection Loss Sounds**
@@ -88,7 +88,7 @@ Morse Code ***A*** mid-low tone ***(. -)***
 Morse Code ***E*** every 3 seconds ***( . )*** (sounds only after safety is off).
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../joy_loss.mp3"></source>
+  <source type="audio/mp3" src="../sounds/joy_loss.mp3"></source>
 </audio>
 
 ### **Fuel Status Sounds**
@@ -97,13 +97,13 @@ Morse Code ***E*** every 3 seconds ***( . )*** (sounds only after safety is off)
 Morse Code ***EK*** every 10 seconds ***( . - . - )***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../fuel_low.mp3"></source>
+  <source type="audio/mp3" src="../sounds/fuel_low.mp3"></source>
 </audio>
 
 #### Fuel Critical Sound
 Morse Code ***EK*** continuous ***( . - . - )***
 
 <audio controls="controls">
-  <source type="audio/mp3" src="../fuel_critical.mp3"></source>
+  <source type="audio/mp3" src="../sounds/fuel_critical.mp3"></source>
 </audio>
 

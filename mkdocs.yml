@@ -50,7 +50,7 @@ nav:
     
     - Getting Started: getting_started/install.md
     - Cerebri:
-      - About: cerebri/index.md
+      - About: cerebri/about.md
       - Boards:
         - NXP® VMU RT1170: cerebri/boards/nxp_vmu_rt1170.md
         - NXP® MR CANHUBK3: cerebri/boards/nxp_mr_canhubk3.md
@@ -58,6 +58,7 @@ nav:
 #        - MultiCopters: cerebri/platforms/multicopters.md
         - Rovers: cerebri/platforms/rovers.md
     - Cranium:
+      - About: cranium/about.md
       - Corti: cranium/corti/corti.md
       - Synapse: cranium/synapse/synapse.md
       - Compute Hardware:
@@ -74,7 +75,7 @@ nav:
       - About: helmet/index.md
     - Tools:
 #      - HCDF: tools/hcdf/hcdf.md
-      - Pyecca: tools/pyecca/pyecca.md
+      - Cyecca: tools/cyecca/about.md
 #    - Spinali:
 #      - CANFD: spinali/canfd.md
 #      - Sensors: spinali/sensors/sensors.md

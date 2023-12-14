@@ -1,15 +1,19 @@
 # NavQPlus set up for CogniPilot with ROS 2 Humble
 
-## Before starting
-!!! important
-    **The NavQPlus Ubuntu 22.04 with ROS 2 Humble image uses CycloneDDS by default.[^1][^3]**
+??? tip "Looking for instructions on how to also install on a development computer?"
+    
+    [Click here to get instructions on how to setup and configure a development computer.](../../../../getting_started/install.md)
 
-!!! attention
-    **These directions are written for someone with experience with embedded Linux and basic embedded computers.**
+??? tip "Already previously followed all the steps to flash and configure the image on the NavQPlus and want to jump to installing CogniPilot on it?"
+    
+    [Click here to jump to installing CogniPilot on NavQPlus.](#install-cognipilot-through-included-script)
 
-## Step-by-step
+??? info "About this guide"
+    These directions are written for someone with experience with embedded Linux and basic embedded computers.
+
+## Step-by-step overview
  
-1. Download the **[pre-built latest Ubuntu 22.04 with ROS2 Humble and CycloneDDS image](https://github.com/rudislabs/navqplus-images/releases/latest)**, exact instructions for that release image are included on the [release documentation](https://github.com/rudislabs/navqplus-images/releases/latest) to use in conjunction with this guide.
+1. **[Download the pre-built latest image](https://github.com/rudislabs/navqplus-images/releases/latest)** with Ubuntu[^1] 22.04 and ROS 2[^3] Humble, exact instructions for that release image are included on the [release documentation](https://github.com/rudislabs/navqplus-images/releases/latest) to use in conjunction with this guide.
 2. Extract the image `navqplus-image-<version>.wic` from the compressed downloaded file `navqplus-image-<version>.wic.zstd` and flash it to the [EMMC](#flashing-the-emmc), [exact copy and paste instructions](https://github.com/rudislabs/navqplus-images/releases/latest) are on the release page.
 3. [Log in for the first time](#log-in-for-the-first-time) by connecting to another computer using the [USB to UART adatper](#usb-to-uart-adapter), [ethernet adapter](#ethernet) or [centermost (USB 2) USB-C® port](#usb-c-gadget-ethernet).[^2]
 4. [Configure Wifi, System User Name and Password.](#configuring-wifi-system-hostname-username-or-password)
@@ -78,8 +82,8 @@ If using `screen`:
 ```bash
 screen /dev/ttyUSB<#> 115200
 ```
-!!! attention
-    **To exit `screen` cleanly when done press simultaneously `Ctrl Shift A` followed by typing `k` then `y`.**
+??? tip "How to close cleanly out of `screen`."
+    To exit `screen` cleanly when done press simultaneously `Ctrl Shift A` followed by typing `k` then `y`.
 
 ### Ethernet
 Connect the included IX Industrial Ethernet cable to NavQPlus, and connect the RJ45 connector to another computer, switch, or router on the local network. Log into NavQPlus over SSH. To SSH into NavQPlus, run the following command:
@@ -94,8 +98,8 @@ Or depending on network setup:
 ssh <username>@<hostname>
 ```
 
-!!! important
-    **Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.**
+??? tip "Changing hostname"
+    Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.
 
 ### USB-C® Gadget Ethernet
 The IP address of the `usb0` network interface on NavQPlus is statically assigned to 192.168.186.3. To use the USB-C® gadget ethernet to connect to the NavQPlus, assign a static IP on the connecting computers existing gadget ethernet interface. The network configuration is as follows:
@@ -112,8 +116,8 @@ Once USB-C® gadget ethernet interface is set up on the connected computer, SSH 
 ```bash
 ssh <username>@<hostname>.local
 ```
-!!! important
-    **Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.**
+??? tip "Changing hostname"
+    Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.
 
 ## Configuring WiFi, System Hostname, Username or Password
 
@@ -132,13 +136,15 @@ sudo nmcli device wifi list
 
 Once connected to the WiFi network the NavQPlus will continue to connect to that network even after a reboot.
 
-To see what Wifi network the NavQPlus is currently connected to you can run without `sudo`:
+??? question "What wifi network is the NavQPlus currently connected to?"
 
-```bash
-nmcli device wifi connect <network_name> password "<password>"
-```
+    To see what Wifi network the NavQPlus is currently connected to run without `sudo`:
+    
+    ```
+        nmcli device wifi list
+    ```
 
-Or if running with `sudo` it will be the network preceeded with a star.
+    Or if running with `sudo` it will be the network preceeded with a star.
 
 ### OPTIONAL - Configuring System Hostname, Username or Password
 
@@ -150,7 +156,7 @@ hostnamectl set-hostname <new_hostname>
 ```
 
 #### Change Username
-!!! warning
+!!! danger
     **Changing the `username` can be dangerous and possibly result in a broken system state requiring a re-flash.**
 ```bash
 usermod -l <new_username> user
@@ -175,8 +181,8 @@ Or depending on network setup:
 ssh <username>@<hostname>
 ```
 
-!!! important
-    **Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.**
+??? tip "Changing hostname"
+    Default hostname is `imx8mpnavq`. The [hostname can be changed](#change-hostname) and is suggested to be changed if running multiple NavQPlus on the same network.
 
 ## Install CogniPilot through included script
 
@@ -184,21 +190,37 @@ Included in the image is an installation script that auto-updates when run. Befo
 
 In the home directory there is a simple helper script that downloads and runs the latest [CogniPilot NavQPlus installer](https://github.com/CogniPilot/helmet/blob/main/install/navqplus_install.sh).
 
-!!! attention
-    **If you want to use [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) with github on the NavQPlus you must first add or create them on the device. Otherwise you will need to answer `n` when asked to clone using already setup github ssh keys.**
+??? tip "Cloning with ssh keys:"
+    If you want to use [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) with github on the NavQPlus you must first add or create them on the device. Otherwise you will need to answer `n` when asked to clone using already setup github ssh keys.
 
 Run the installer script:
 ```bash
 ./install_cognipilot.sh
 ```
 
-!!! attention
-    **It is reccomended to select `y` for runtime optimization when prompted**
+???+ tip "When prompted to choose whether or not to use ssh-keys:"
 
-!!! important
-    **Choose the appropriate release and vehicle/robot to build for. Further vehicle specific commands and information can be found in the site navigation under Reference Systems**
+    * ***y*** to [clone with ssh keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh), best for development work but only select if ssh keys are already present and setup with GitHub.
+    * ***n*** to clone with https, best for users who do not plan to make modifications or develop.
+
+???+ tip "When prompted to choose whether or not to optimize runtime performance:"
+
+    **It is reccomended to select `y` for runtime optimization when prompted.**
+
+???+ tip "When prompted to choose a release:"
+
+    1. ***airy*** for a stable non-development release.
+    2. ***main*** for active development.
+
+???+ tip "When prompted to choose a platform to build:"
+    
+    1. [***b3rb*** is an ackermann based mobile robotic platform.](../../../../reference_systems/b3rb/hardware.md)
+    2. ***elm4*** is a differential drive based mobile robotic platform.
+
+??? question "Does CycloneDDS need configuring?"
+    The NavQPlus Ubuntu 22.04 with ROS 2 Humble image uses CycloneDDS by default. Make sure to edit the default CycloneDDSConfig.xml to only allow the networks that are desired to connector over when trying to get maximal performance. An example of this is using only the wifi device `mlan0` to connect to a ROS 2 Domain. To save performance remove the other default included interfaces `eth1` and `usb0` by [deleting those lines](https://github.com/rudislabs/NavQPlus-Resources/blob/36cf2b8e8befcd4265c7027d072b6a70d2148fd0/configs/CycloneDDSConfig.xml#L6-L7) from the NavQPlus local `~/CycloneDDSconfig.xml`.
 
 
 [^1]: Ubuntu is a registered trademark of Canonical Ltd.
 [^2]: USB-C® is a trademark of USB Implementers Forum.
-[^3]: ROS 2 is governed by Open Robotics
+[^3]: ROS 2 is governed by Open Robotics.

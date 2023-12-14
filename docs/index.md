@@ -19,7 +19,7 @@ CogniPilot is not aiming to re-invent an opensource autopilot that can be a drop
 ## Currently supported platforms:
 
 ### Rover
-   * B3RB
+   * [B3RB](./reference_systems/b3rb/hardware.md)
    * ELM4
 
 CogniPilot's upcoming release, to be named, but going by B-Mythical (a mythical creature with a name starting with B) will have planned additional support for:
@@ -38,4 +38,6 @@ CogniPilot's upcoming release, to be named, but going by B-Mythical (a mythical 
 * ROS 2 Humble
 * Gazebo Garden
 
-To get started see [Install](./getting_started/install.md)
+## Get started:
+
+To get started follow the guide on [how to install].(./getting_started/install.md)
