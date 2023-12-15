@@ -12,14 +12,14 @@
         <meta name="author" content="CogniPilot Foundation">
       
       
-        <link rel="canonical" href="https://airy.cognipilot.org/reference_systems/b3rb/simulation/">
+        <link rel="canonical" href="https://airy.cognipilot.org/reference_systems/b3rb/electrode/">
       
       <link rel="icon" href="../../../assets/CogniPilotLogoFavicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Running in Simulation - Airy Dev Guide</title>
+        <title>Using with Electrode - Airy Dev Guide</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#b3rb-simulation" class="md-skip">
+        <a href="#b3rb-platform-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running in Simulation
+              Using with Electrode
             
           </span>
         </div>
@@ -937,20 +937,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../electrode/" class="md-nav__link">
-        Using with Electrode
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -963,12 +949,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Running in Simulation
+          Using with Electrode
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Running in Simulation
+        Using with Electrode
       </a>
       
         
@@ -987,15 +973,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-b3rb-sil-in-jupyterlab-terminal-or-bash-directly" class="md-nav__link">
-    Run B3RB SIL (in JupyterLab terminal or Bash directly)
+  <a href="#select-a-mode" class="md-nav__link">
+    Select a Mode:
   </a>
+  
+    <nav class="md-nav" aria-label="Select a Mode:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-mode" class="md-nav__link">
+    Manual Mode:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nav2-cmd_vel-mode" class="md-nav__link">
+    Nav2 (cmd_vel) Mode:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-mode" class="md-nav__link">
+    Auto Mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulation" class="md-nav__link">
-    Simulation
+  <a href="#arming" class="md-nav__link">
+    Arming
   </a>
   
 </li>
@@ -1004,6 +1017,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        Running in Simulation
+      </a>
     </li>
   
 
@@ -1071,15 +1098,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-b3rb-sil-in-jupyterlab-terminal-or-bash-directly" class="md-nav__link">
-    Run B3RB SIL (in JupyterLab terminal or Bash directly)
+  <a href="#select-a-mode" class="md-nav__link">
+    Select a Mode:
   </a>
+  
+    <nav class="md-nav" aria-label="Select a Mode:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-mode" class="md-nav__link">
+    Manual Mode:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nav2-cmd_vel-mode" class="md-nav__link">
+    Nav2 (cmd_vel) Mode:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-mode" class="md-nav__link">
+    Auto Mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulation" class="md-nav__link">
-    Simulation
+  <a href="#arming" class="md-nav__link">
+    Arming
   </a>
   
 </li>
@@ -1096,25 +1150,43 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/CogniPilot/airy_docs/edit/main/docs/reference_systems/b3rb/simulation.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CogniPilot/airy_docs/edit/main/docs/reference_systems/b3rb/electrode.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="b3rb-simulation">B3RB Simulation</h1>
-<h2 id="run-b3rb-sil-in-jupyterlab-terminal-or-bash-directly">Run B3RB SIL (in JupyterLab terminal or Bash directly)</h2>
-<pre><code class="language-bash">ros2 launch b3rb_gz_bringup sil.launch.py
-</code></pre>
+<h1 id="b3rb-platform-overview">B3RB Platform Overview</h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p><strong>If running on a machine with a more powerful graphics card optionally run more gaphics intensive depot world:</strong></p>
+<p><strong>Use a joystick controller (<a href="https://www.logitechg.com/en-us/products/gamepads/f310-gamepad.940-000110.html">Logitech F310</a> suggested) to control vehicle modes.</strong></p>
 </div>
-<pre><code class="language-bash">ros2 launch b3rb_gz_bringup sil.launch.py world:=depot
-</code></pre>
-<h2 id="simulation">Simulation</h2>
-<p>Example of simulation running (depot world).</p>
-<p><img alt="B3RB Depot world simulation" src="../images/b3rb_depot.png" title="B3RB Depot world simulation" /></p>
+<h2 id="select-a-mode">Select a Mode:</h2>
+<p><img alt="F310" src="../images/f310.jpg" title="F310" /></p>
+<ul>
+<li><strong>A</strong>: manual</li>
+<li><strong>X</strong>: cmd_vel (nav2)</li>
+<li><strong>B</strong>: auto (other cmd_vel)</li>
+<li><strong>Y</strong>: calibration</li>
+</ul>
+<h3 id="manual-mode">Manual Mode:</h3>
+<ul>
+<li><strong>Left stick</strong> Up/Down: throttle</li>
+<li><strong>Right stick</strong> Left/Right: steering</li>
+</ul>
+<h3 id="nav2-cmd_vel-mode">Nav2 (cmd_vel) Mode:</h3>
+<ul>
+<li>Click <strong>2D Pose Goal</strong> and select desired location on RVIZ2 map.</li>
+</ul>
+<h3 id="auto-mode">Auto Mode</h3>
+<ul>
+<li>Click <strong>2D Pose Goal</strong> and select desired location on RVIZ2 map.</li>
+</ul>
+<h2 id="arming">Arming</h2>
+<ul>
+<li><strong>START</strong>: arm</li>
+<li><strong>BACK</strong>: disarm</li>
+</ul>
 
               
             </article>
