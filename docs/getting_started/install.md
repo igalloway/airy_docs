@@ -2,7 +2,7 @@
 
 ???+ tip "Looking for instructions on how to also install on a NavQPlus?"
     
-    [Click here to get instructions on how to setup and configure a NavQPlus](../../cranium/compute/navqplus/setup).
+    [Click here to get instructions on how to setup and configure a NavQPlus](../cranium/compute/navqplus/setup.md).
     Continue this guide for installing CogniPilot on a native development computer.
 
 ## Requirements
@@ -26,7 +26,7 @@ If planning to develop and make changes to code it is suggested to set up ssh ke
 ## Use CogniPilot universal installer
 ??? info "Using Docker instead."
 
-    If preffering to use docker, there is a [Docker Development Container](advanced/docker) that may be used instead.
+    If preffering to use docker, there is a [Docker Development Container](advanced/docker.md) that may be used instead.
 
 To install CogniPilot on a system run the following to download the universal installer and run it (**follow the prompts in the installer**):
 
@@ -48,7 +48,7 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
 
     1. ***native*** select this for installing on development computer
     2. ***navqplus*** only if installing on a NavQPlus image that does not already have the installer on it.
-    [Click here for the proper way to install on a NavQPlus.](../../cranium/compute/navqplus/setup/#install-cognipilot-through-included-script)
+    [Click here for the proper way to install on a NavQPlus.](../cranium/compute/navqplus/setup.md#install-cognipilot-through-included-script)
 
 ???+ tip "When prompted to choose whether or not to use ssh-keys:"
 
@@ -60,11 +60,11 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
 
 ???+ tip "The `build_workspace` script:"
 
-     * Sets up the workspaces using vcs and yaml files provided in [helmet](../../helmet/about).
-     * Builds [Cranium](../../cranium/about) ROS 2 workspace.
-     * Builds [Cerebri](../../cerebri/about) (Zephyr RTOS native_sim) for software-in-the-loop simulation.
-     * Builds [Cyecca](../../tools/cyecca/about) (control/estimation software).
-     * Builds [Electrode](../../electrode/about) ROS 2 workspace (ground station software).
+     * Sets up the workspaces using vcs and yaml files provided in [helmet](../helmet/about.md).
+     * Builds [Cranium](../cranium/about.md) ROS 2 workspace.
+     * Builds [Cerebri](../cerebri/about.md) (Zephyr RTOS native_sim) for software-in-the-loop simulation.
+     * Builds [Cyecca](../tools/cyecca/about.md) (control/estimation software).
+     * Builds [Electrode](../electrode/about.md) ROS 2 workspace (ground station software).
 
 To build the workspace run (**follow the prompts in the workspace builder**):
 
@@ -89,12 +89,12 @@ Currently supported platforms in this release are B3RB and ELM4.
 
 ### Using a real platform:
 
-* [**B3RB** hardware guide.](../../reference_systems/b3rb/setup)
+* [**B3RB** hardware guide.](../reference_systems/b3rb/setup.md)
 * **ELM4** hardware guide coming soon.
 
 ### Simulating a platform:
 
-* [**B3RB** simulation guide.](../../reference_systems/b3rb/simulation)
+* [**B3RB** simulation guide.](../reference_systems/b3rb/simulation.md)
 * **ELM4** simulation guide coming soon.
 
 ## Convenience Scripts
@@ -132,7 +132,7 @@ docs
 
      * Starts a JupyterLab instance for Cyecca to aid in developing control and estimation algorithms.
 
-To [develop algorithms with cyecca](../../tools/cyecca/about) run:
+To [develop algorithms with cyecca](../tools/cyecca/about.md) run:
 
 ```bash
 cyecca

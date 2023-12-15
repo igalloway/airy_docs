@@ -5,7 +5,7 @@ The tailights on the B3RB are used for showing the current system status and bre
 ??? question "My status lights are not breathing, what's wrong?"
 
     * If the status lights are not breathing and there is a [startup sound](#flight-of-the-alicanto) check your board for:
-        * LED connection to [SPI2 port on MR CANHUBK3](../../../cerebri/boards/nxp_mr_canhubk3).
+        * LED connection to [SPI2 port on MR CANHUBK3](../../cerebri/boards/nxp_mr_canhubk3.md).
         * cerebri/app/b3rb/prj.conf setting for [CONFIG_CEREBRI_B3RB_LIGHTING=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/prj.conf#L14)
         * cerebri/app/b3rb/prj.conf setting for [CONFIG_CEREBRI_ACTUATE_LED_ARRAY=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/prj.conf#L18)
         * cerebri/app/b3rb/boards/mr_canhubk3.conf setting for [CONFIG_LED_STRIP=y CONFIG_APA102_STRIP=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/boards/mr_canhubk3.conf#L5-L6)

@@ -59,7 +59,7 @@ This command executes the script [docs](https://github.com/CogniPilot/helmet/blo
 unlock
 ```
 
-See the other non-docker specific scripts in the [main installation](../install/#convenience-scripts)
+See the other non-docker specific scripts in the [main installation](../install.md#convenience-scripts)
 
 ## Build the Docker Image (For Advanced Users)
 
