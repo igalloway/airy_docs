@@ -47,7 +47,6 @@ plugins:
 
 nav:
     - Home: index.md
-    
     - Getting Started: getting_started/install.md
     - Cerebri:
       - About: cerebri/about.md
@@ -55,7 +54,6 @@ nav:
         - NXP® VMU RT1170: cerebri/boards/nxp_vmu_rt1170.md
         - NXP® MR CANHUBK3: cerebri/boards/nxp_mr_canhubk3.md
       - Platforms:
-#        - MultiCopters: cerebri/platforms/multicopters.md
         - Rovers: cerebri/platforms/rovers.md
     - Cranium:
       - About: cranium/about.md
@@ -74,17 +72,8 @@ nav:
     - Helmet:
       - About: helmet/about.md
     - Tools:
-#      - HCDF: tools/hcdf/hcdf.md
       - Cyecca: tools/cyecca/about.md
-#    - Spinali:
-#      - CANFD: spinali/canfd.md
-#      - Sensors: spinali/sensors/sensors.md
-#      - Actuators: spinali/actuators/actuators.md
     - Reference Systems:
-#      - MultiCopters:
-#        - RDDRONE:
-#          - Hardware: reference_systems/rddrone/rddrone.md
-#          - Simulation: reference_systems/rddrone/simulation.md
       - Rovers:
         - B3RB:
           - About: reference_systems/b3rb/about.md
@@ -94,10 +83,4 @@ nav:
           - Modes and Navigation: reference_systems/b3rb/operate.md
           - Using with Electrode: reference_systems/b3rb/electrode.md
           - Running in Simulation: reference_systems/b3rb/simulation.md
-#        - ELM4:
-#          - Hardware: reference_systems/elm4/el_mandadero.md
-#          - Simulation: reference_systems/elm4/simulation.md
-#        - MELM:
-#          - Hardware: reference_systems/melm/minimando.md
-#          - Simulation: reference_systems/melm/simulation.md
     - Releases: "https://cognipilot.org/"
