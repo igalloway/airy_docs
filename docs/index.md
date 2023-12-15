@@ -40,4 +40,4 @@ CogniPilot's upcoming release, to be named, but going by B-Mythical (a mythical 
 
 ## Get started:
 
-To get started follow the guide on [how to install].(./getting_started/install.md)
+To get started follow the guide on [how to install](./getting_started/install.md).

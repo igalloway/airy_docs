@@ -2,7 +2,7 @@
 
 ??? tip "Looking for instructions on how to also install on a development computer?"
     
-    [Click here to get instructions on how to setup and configure a development computer.](../../../../getting_started/install.md)
+    [Click here to get instructions on how to setup and configure a development computer.](../../../getting_started/install.md)
 
 ??? tip "Already previously followed all the steps to flash and configure the image on the NavQPlus and want to jump to installing CogniPilot on it?"
     
@@ -214,7 +214,7 @@ Run the installer script:
 
 ???+ tip "When prompted to choose a platform to build:"
     
-    1. [***b3rb*** is an ackermann based mobile robotic platform.](../../../../reference_systems/b3rb/hardware.md)
+    1. [***b3rb*** is an ackermann based mobile robotic platform.](../../../reference_systems/b3rb/hardware.md)
     2. ***elm4*** is a differential drive based mobile robotic platform.
 
 ??? question "Does CycloneDDS need configuring?"

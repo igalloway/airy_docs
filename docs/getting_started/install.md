@@ -63,7 +63,7 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
      * Sets up the workspaces using vcs and yaml files provided in [helmet](../helmet/about.md).
      * Builds [Cranium](../cranium/about.md) ROS 2 workspace.
      * Builds [Cerebri](../cerebri/about.md) (Zephyr RTOS native_sim) for software-in-the-loop simulation.
-     * Builds [Cyecca](../cyecca/about.md) (control/estimation software).
+     * Builds [Cyecca](../tools/cyecca/about.md) (control/estimation software).
      * Builds [Electrode](../electrode/about.md) ROS 2 workspace (ground station software).
 
 To build the workspace run (**follow the prompts in the workspace builder**):
@@ -132,7 +132,7 @@ docs
 
      * Starts a JupyterLab instance for Cyecca to aid in developing control and estimation algorithms.
 
-To [develop algorithms with cyecca](../cyecca/about.md) run:
+To [develop algorithms with cyecca](../tools/cyecca/about.md) run:
 
 ```bash
 cyecca
