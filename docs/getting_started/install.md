@@ -118,8 +118,8 @@ docs
 
 ???+ tip "When prompted to choose a doc to build:"
     
-    1. ***airy*** is the [airy developers guide site](https://airy.cognipilot.org).
-    2. ***overview*** is the [release overview site](https://cognipilot.org).
+    1. ***airy*** is the [airy developers guide site (airy.cognipilot.org)](https://airy.cognipilot.org).
+    2. ***overview*** is the [release overview site (cognipilot.org)](https://cognipilot.org).
 
 ??? question "I ran the command where are the docs?"
 

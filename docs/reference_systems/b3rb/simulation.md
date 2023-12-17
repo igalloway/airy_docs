@@ -1,6 +1,14 @@
 # B3RB Simulation
 
-Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md).
+Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to Cerebri running ontop Zephyr RTOS native_sim.
+
+## Before running simulation
+
+Before running the simulation for the first time make sure to have first followed the [installation for development computer guide](../../getting_started/install.md). Once at [building the workspace](../../getting_started/install.md#build-the-workspace) make sure to select `1. b3rb` for the platform. This will also build Cerebri for native_sim so the section below **["Build Cerebri for `native_sim`"](#build-cerebri-for-native_sim)** can be skipped if the `build_workspace` script was just run. If other images have been built in Cerebri since running the script make sure to follow **["Build Cerebri for `native_sim`"](#build-cerebri-for-native_sim)**
+
+## Build Cerebri for `native_sim`
+
+To build [Cerebri for native_sim (posix)](../../cerebri/about.md) make sure the Zephyr RTOS build environment is up to date. There is a convenience script that by default builds the `native_sim` enviroment that should be run before the  with west is up to date
 
 ## Run Electrode
 
@@ -14,7 +22,7 @@ ros2 launch electrode electrode.launch.py gui:=foxglove
 
     [Click here for more information on how to get foxglove studio and open it.](../../electrode/foxglove.md)
 
-??? question "I opened foxglove, what do I connect it to for simulation?"
+??? question "I opened foxglove, how do I connect it to the simulation?"
 
     After launching the foxglove websocket bridge by passing to electrode `gui:=foxglove`
     connect to it on `ws://localhost:8765`
@@ -41,6 +49,10 @@ Run the default simulation with:
 ```bash
 ros2 launch b3rb_gz_bringup sil.launch.py
 ```
+
+??? question "My ROS 2 cerebri_bringup node is showing an error and is keeping simulation from running."
+
+    If the simulation launch script is throwing an error about cerebri_bringup make sure that [cerebri is built, installed and sourced properly for `native_sim`](#build-cerebri-for-native_sim).
 
 !!! tip "**If running on a machine with a powerful graphics card optionally run the more gaphics intensive [depot world](../../dream/worlds/worlds.md#depot-world).**"
 

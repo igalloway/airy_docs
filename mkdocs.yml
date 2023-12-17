@@ -74,13 +74,12 @@ nav:
     - Tools:
       - Cyecca: tools/cyecca/about.md
     - Reference Systems:
-      - Rovers:
-        - B3RB:
-          - About: reference_systems/b3rb/about.md
-          - Hardware Overview: reference_systems/b3rb/hardware.md
-          - Setting up System: reference_systems/b3rb/setup.md
-          - Status Lighting and Sounds: reference_systems/b3rb/status.md
-          - Modes and Navigation: reference_systems/b3rb/operate.md
-          - Using with Electrode: reference_systems/b3rb/electrode.md
-          - Running in Simulation: reference_systems/b3rb/simulation.md
+      - B3RB:
+        - About: reference_systems/b3rb/about.md
+        - Hardware Overview: reference_systems/b3rb/hardware.md
+        - Setting up the System: reference_systems/b3rb/setup.md
+        - Status Lighting and Sounds: reference_systems/b3rb/status.md
+        - Using with Electrode: reference_systems/b3rb/electrode.md
+        - Operating the platform: reference_systems/b3rb/operate.md
+        - Running in Simulation: reference_systems/b3rb/simulation.md
     - Releases: "https://cognipilot.org/"

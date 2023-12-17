@@ -16,13 +16,25 @@ CogniPilot is not aiming to re-invent an opensource autopilot that can be a drop
 
   * **Deprecate if No-longer Maintained**: On each release cycle, the CogniPilot technical steering committee (TSC) will make a decision on whether to maintain official support for each vehicle platform or whether to adopt a new platform. This is to combat the slow creep in lines of code due to vehicle specific edge cases. 
 
-## Currently supported platforms:
+
+## Software Stack
+* Ubuntu 22.04
+* Zephyr RTOS 3.5
+* ROS 2 Humble
+* Gazebo Garden
+
+## Currently supported platforms
 
 ### Rover
    * [B3RB](./reference_systems/b3rb/about.md)
    * ELM4
 
-CogniPilot's upcoming release, to be named, but going by B-Mythical (a mythical creature with a name starting with B) will have planned additional support for:
+## Get started
+
+To get started follow the guide on [how to install on a computer](./getting_started/install.md).
+
+## CogniPilot's next release
+To still be named, but going by B-Mythical (a mythical creature with a name starting with B) will have planned additional support for:
 
 ### Mulirotor
    * NXP RDDrone
@@ -32,12 +44,5 @@ CogniPilot's upcoming release, to be named, but going by B-Mythical (a mythical 
 ### Plane
    * TBD
 
-## Software Stack
-* Ubuntu 22.04
-* Zephyr RTOS 3.5
-* ROS 2 Humble
-* Gazebo Garden
 
-## Get started:
 
-To get started follow the guide on [how to install](./getting_started/install.md).
