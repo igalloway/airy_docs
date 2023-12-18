@@ -28,9 +28,9 @@ If planning to develop and make changes to code it is suggested to set up ssh ke
 
     If preffering to use docker, there is a [Docker Development Container](advanced/docker.md) that may be used instead.
 
-To install CogniPilot on a system run the following to download the universal installer and run it (**follow the prompts in the installer**):
+To install CogniPilot on a system download the universal installer and run it (**follow the prompts in the installer**).
 
-```bash
+```bash title="Download and run the universal installer:"
 sudo apt-get update
 sudo apt-get install git wget -y
 mkdir -p ~/cognipilot/installer
@@ -66,9 +66,9 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
      * Builds [Cyecca](../tools/cyecca/about.md) (control/estimation software).
      * Builds [Electrode](../electrode/about.md) ROS 2 workspace (ground station software).
 
-To build the workspace run (**follow the prompts in the workspace builder**):
+Build the CogniPilot workspace with `build_workspace` script (**follow the prompts in the workspace builder**).
 
-```bash
+```bash title="Run the build_workspace script:"
 build_workspace
 ```
 
@@ -105,9 +105,9 @@ Currently supported platforms in this release are B3RB and ELM4.
      * Downloads and builds the documentation repositories for the documentation currently being read so that contributions can be made easily.
      * Allows for selection of documents to be served with mkdocs.
 
-To view the docs offline locally or to contribute to them run (**follow the prompts for the correct docs**):
+To view the docs offline locally or to contribute to them use the `docs` convenience script (**follow the prompts for the correct docs**).
 
-```bash
+```bash title="Run the docs convenience script:"
 docs
 ```
 
@@ -132,8 +132,8 @@ docs
 
      * Starts a JupyterLab instance for Cyecca to aid in developing control and estimation algorithms.
 
-To [develop algorithms with cyecca](../tools/cyecca/about.md) run:
+To [develop algorithms with `cyecca`](../tools/cyecca/about.md) use the `cyecca` convenience script.
 
-```bash
+```bash title="Run the cyeccs convenience script:"
 cyecca
 ```
