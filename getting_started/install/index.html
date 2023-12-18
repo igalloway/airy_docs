@@ -1252,14 +1252,14 @@ Continue this guide for installing CogniPilot on a native development computer.<
 <summary>Using Docker instead.</summary>
 <p>If preffering to use docker, there is a <a href="../advanced/docker/">Docker Development Container</a> that may be used instead.</p>
 </details>
-<p>To install CogniPilot on a system run the following to download the universal installer and run it (<strong>follow the prompts in the installer</strong>):</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get install git wget -y
-mkdir -p ~/cognipilot/installer
-wget -O ~/cognipilot/installer/install_cognipilot.sh https://raw.githubusercontent.com/CogniPilot/helmet/main/install/install_cognipilot.sh
-chmod a+x ~/cognipilot/installer/install_cognipilot.sh
-/bin/bash ~/cognipilot/installer/install_cognipilot.sh
-</code></pre>
+<p>To install CogniPilot on a system download the universal installer and run it (<strong>follow the prompts in the installer</strong>).</p>
+<div class="language-bash highlight"><span class="filename">Download and run the universal installer:</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt-get update
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt-get install git wget -y
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mkdir -p ~/cognipilot/installer
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>wget -O ~/cognipilot/installer/install_cognipilot.sh https://raw.githubusercontent.com/CogniPilot/helmet/main/install/install_cognipilot.sh
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>chmod a+x ~/cognipilot/installer/install_cognipilot.sh
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>/bin/bash ~/cognipilot/installer/install_cognipilot.sh
+</span></code></pre></div>
 <details class="tip" open="open">
 <summary>When prompted to choose a release:</summary>
 <ol>
@@ -1293,9 +1293,9 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
 <li>Builds <a href="../../electrode/about/">Electrode</a> ROS 2 workspace (ground station software).</li>
 </ul>
 </details>
-<p>To build the workspace run (<strong>follow the prompts in the workspace builder</strong>):</p>
-<pre><code class="language-bash">build_workspace
-</code></pre>
+<p>Build the CogniPilot workspace with <code>build_workspace</code> script (<strong>follow the prompts in the workspace builder</strong>).</p>
+<div class="language-bash highlight"><span class="filename">Run the build_workspace script:</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>build_workspace
+</span></code></pre></div>
 <details class="tip" open="open">
 <summary>When prompted to choose whether or not to use ssh-keys:</summary>
 <ul>
@@ -1331,9 +1331,9 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
 <li>Allows for selection of documents to be served with mkdocs.</li>
 </ul>
 </details>
-<p>To view the docs offline locally or to contribute to them run (<strong>follow the prompts for the correct docs</strong>):</p>
-<pre><code class="language-bash">docs
-</code></pre>
+<p>To view the docs offline locally or to contribute to them use the <code>docs</code> convenience script (<strong>follow the prompts for the correct docs</strong>).</p>
+<div class="language-bash highlight"><span class="filename">Run the docs convenience script:</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docs
+</span></code></pre></div>
 <details class="tip" open="open">
 <summary>When prompted to choose whether or not to use ssh-keys:</summary>
 <ul>
@@ -1359,9 +1359,9 @@ chmod a+x ~/cognipilot/installer/install_cognipilot.sh
 <li>Starts a JupyterLab instance for Cyecca to aid in developing control and estimation algorithms.</li>
 </ul>
 </details>
-<p>To <a href="../../tools/cyecca/about/">develop algorithms with cyecca</a> run:</p>
-<pre><code class="language-bash">cyecca
-</code></pre>
+<p>To <a href="../../tools/cyecca/about/">develop algorithms with <code>cyecca</code></a> use the <code>cyecca</code> convenience script.</p>
+<div class="language-bash highlight"><span class="filename">Run the cyeccs convenience script:</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cyecca
+</span></code></pre></div>
 
               
             </article>

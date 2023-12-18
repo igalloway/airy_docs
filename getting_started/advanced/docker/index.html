@@ -1054,24 +1054,24 @@
 <p>Don't forget <a href="https://docs.docker.com/engine/install/linux-postinstall/">Linux Post Install</a> </p>
 </div>
 <h2 id="clone-docker-repository">Clone Docker Repository</h2>
-<p><span style="color:blue">On the Host</span></p>
-<pre><code class="language-bash">mkdir -p ~/cognipilot
-cd ~/cognipilot
-git clone https://github.com/cognipilot/docker
-cd  ~/cognipilot/docker
-git submodule update --init --recursive
-</code></pre>
+<p><span style="color:blue">On the Host</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir -p ~/cognipilot
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> ~/cognipilot
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git clone https://github.com/cognipilot/docker
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span>  ~/cognipilot/docker
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git submodule update --init --recursive
+</span></code></pre></div></p>
 <h2 id="start-the-docker-image">Start the Docker Image</h2>
 <p>The dream start command, automatically pulls the <a href="https://hub.docker.com/r/cognipilot/dream">dream image</a> from dockerhub, and starts the image.</p>
-<p><span style="color:blue">On the Host</span></p>
-<pre><code class="language-bash">cd ~/cognipilot/docker/dream
-./dream start
-</code></pre>
+<p><span style="color:blue">On the Host</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span> ~/cognipilot/docker/dream
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>./dream start
+</span></code></pre></div></p>
 <h2 id="execute-a-command-on-the-docker-image">Execute a Command on the Docker Image</h2>
 <p>This starts a shell within the container.</p>
-<p><span style="color:blue">On the Host</span></p>
-<pre><code class="language-bash">./dream exec
-</code></pre>
+<p><span style="color:blue">On the Host</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./dream <span class="nb">exec</span>
+</span></code></pre></div></p>
 <p>If passed extra arguments will run those commands as well.</p>
 <h2 id="convenience-scripts-docker-specific">Convenience Scripts (Docker Specific)</h2>
 <h3 id="unlock">unlock</h3>
@@ -1079,16 +1079,16 @@ git submodule update --init --recursive
 <ul>
 <li>Unlocks GPG and SSH keys mounted in the docker image.</li>
 </ul>
-<p><span style="color:blue">Within the Container</span></p>
-<pre><code class="language-bash">unlock
-</code></pre>
+<p><span style="color:blue">Within the Container</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>unlock
+</span></code></pre></div></p>
 <p>See the other non-docker specific scripts in the <a href="../../install/#convenience-scripts">main installation</a></p>
 <h2 id="build-the-docker-image-for-advanced-users">Build the Docker Image (For Advanced Users)</h2>
 <p>This process will take awhile. It is usually sufficient to use dream start instead, which will automatically pull the latest image from dockerhub.</p>
-<p><span style="color:blue">On the Host</span></p>
-<pre><code class="language-bash">cd ~/cognipilot/docker/dream
-./dream build
-</code></pre>
+<p><span style="color:blue">On the Host</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span> ~/cognipilot/docker/dream
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./dream build
+</span></code></pre></div></p>
 
               
             </article>
