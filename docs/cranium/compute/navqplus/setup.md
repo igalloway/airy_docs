@@ -31,8 +31,11 @@ chmod a+x uuu
 
 find the [boot switches](#boot-switches) on the NavQPlus and flip them to the "Flash" mode.
 
-Then, connect NavQPlus to the computer with the downloaded release using the leftmost (USB 1) USB-C® port and the two flash status lights should light up as shown in the image. 
-![Flash eMMC hookup and status lights.](data/flash_hookup_lights.jpg "Flash eMMC hookup and status lights")
+Then, connect NavQPlus to the computer with the downloaded release using the leftmost (USB 1) USB-C® port and the two flash status lights should light up. 
+
+??? picture "Flash eMMC hookup and status lights."
+
+    ![Flash eMMC hookup and status lights.](data/flash_hookup_lights.jpg "Flash eMMC hookup and status lights")
 
 
 Run the following command to make sure that the NavQPlus is recognized by `uuu`:
@@ -40,8 +43,9 @@ Run the following command to make sure that the NavQPlus is recognized by `uuu`:
 ```bash
 ./uuu -lsusb
 ```
+??? picture "Found device with uuu."
 
-![Found device with uuu.](data/uuu_ls.png "uuu found device")
+    ![Found device with uuu.](data/uuu_ls.png "uuu found device")
 
 If it shows that a device is connected, continue to flashing. To flash the board, use the general command below or [copy and paste the specific command](https://github.com/rudislabs/navqplus-images/releases/latest) from the release:
 
@@ -49,10 +53,16 @@ If it shows that a device is connected, continue to flashing. To flash the board
 sudo ./uuu -b emmc_all navqplus-image-<version>.bin-flash_evk navqplus-image-<version>.wic
 ```
 
-Once this process has finished, make sure that the flash was successfull by comparing to the image below. If so, configure the [boot switches](#boot-switches) to boot from eMMC.
+Once this process has finished, make sure that the flash was successfull. If so, configure the [boot switches](#boot-switches) to boot from eMMC.
 
+??? picture "Successful eMMC flash."
 
-![Successful eMMC flash.](data/uuu_emmc.png "Flashed eMMC Successfully")
+    ![Successful eMMC flash.](data/uuu_emmc.png "Flashed eMMC Successfully")
+
+??? question "uuu gave a weird output abort message after flashing, did it work correctly?"
+
+    There is a know issue where uuu will throw an assertion failed error as seen below, however, the image is flashed correctly and the remaining steps setup and install steps can be followed.
+    ![UUU assertion failed.](data/uuu_assert.png "UUU assertion failed.")
 
 ## Boot Switches
 
@@ -108,8 +118,9 @@ The IP address of the `usb0` network interface on NavQPlus is statically assigne
 
 **Network Mask:** 255.255.255.0
 
+??? picture "Adding the network configuration to Network Manager."
 
-![Network Manager connection profile.](data/usb_network.png "USB-C® gadget ethernet network connection")
+    ![Network Manager connection profile.](data/usb_network.png "USB-C® gadget ethernet network connection")
 
 Once USB-C® gadget ethernet interface is set up on the connected computer, SSH by running:
 
