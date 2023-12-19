@@ -1136,7 +1136,7 @@
 
 
 <h1 id="b3rb-simulation">B3RB Simulation</h1>
-<p>Simulation uses <a href="https://gazebosim.org/home">gazebo garden</a> to simulate sensors and physics in the <a href="../../../dream/worlds/worlds/">"dream" worlds</a> that connects to Cerebri running ontop Zephyr RTOS <code>native_sim</code>.</p>
+<p>Simulation uses <a href="https://gazebosim.org/home">gazebo garden</a> to simulate sensors and physics in the <a href="../../../dream/worlds/worlds/">"dream" worlds</a> that connects to <a href="../../../cerebri/about/">Cerebri</a> running ontop Zephyr RTOS <code>native_sim</code>.</p>
 <h2 id="before-running-simulation">Before running simulation</h2>
 <p>Before running the simulation for the first time make sure to have first followed the <a href="../../../getting_started/install/">installation for development computer guide</a>. Once at <a href="../../../getting_started/install/#build-the-workspace">building the workspace</a> make sure to select <code>1. b3rb</code> for the platform. This will also build Cerebri for <code>native_sim</code> so the section below <strong><a href="#build-cerebri-for-native_sim">"Build Cerebri for <code>native_sim</code>"</a></strong> can be skipped if the <code>build_workspace</code> script was just run. If other images have been built in Cerebri since running the script make sure to follow <strong><a href="#build-cerebri-for-native_sim">"Build Cerebri for <code>native_sim</code>"</a></strong>. </p>
 <h2 id="build-cerebri-for-native_sim">Build Cerebri for <code>native_sim</code></h2>
@@ -1155,7 +1155,7 @@
 <h2 id="run-electrode">Run Electrode</h2>
 <details class="tip" open="open">
 <summary>If using the foxglove backend for Electrode.</summary>
-<p>Make sure to have first run the <code>build_foxglove</code> script at some point and follow the prompts.
+<p>Make sure to have first run the <code>build_foxglove</code> script at some point and <strong>follow the prompts</strong>.
  <div class="language-bash highlight"><span class="filename">Run build_foxglove script:</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>build_foxglove
 </span></code></pre></div></p>
 </details>
@@ -1164,14 +1164,21 @@
 <div class="language-bash highlight"><span class="filename">Electrode for simulation with foxglove:</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2 launch electrode electrode.launch.py sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div>
 <details class="question">
-<summary>How do I open the foxglove studio viewer?</summary>
-<p><a href="../../../electrode/foxglove/">Click here for more information on how to get foxglove studio and open it.</a></p>
-</details>
-<details class="question">
-<summary>I opened foxglove, how do I connect it to the simulation?</summary>
-<p>After launching the foxglove websocket bridge by passing to electrode <code>sim:=true</code>
+<summary>Foxglove studio opened, how do I connect it to the simulation?</summary>
+<p>After launching electrode with only passing <code>sim:=true</code>
 connect to it on <code>ws://localhost:8765</code>
-<img alt="Connect foxglove with simulation websocket" src="../images/foxglove_simulation_socket.png" title="Connect foxglove with simulation web socket" /></p>
+<img alt="Connect foxglove with simulation websocket" src="../images/foxglove_simulation_websocket.png" title="Connect foxglove with simulation web socket" /></p>
+</details>
+<details class="question" open="open">
+<summary>My foxglove studio connected but it's not showing what I would expect it to, how do I load the <code>b3rb</code> layout?</summary>
+<ol>
+<li>Click the <code>LAYOUT</code> drop down in upper right followed by <code>Imoport from file...</code>
+<img alt="Select foxglove LAYOUT dropdown &gt; Import from file..." src="../images/foxglove_select_layout.png" title="Select foxglove LAYOUT dropdown &gt; Import from file..." /></li>
+<li>Select the <code>b3rb.json</code> followed by pressing <code>Open</code> by navigating <code>Home &gt; cognipilot &gt; electrode &gt; src &gt; electrode &gt; foxglove_layouts &gt; b3rb.json</code>
+<img alt="Select b3rb.json layout." src="../images/foxglove_select_b3rb_layout_file.png" title="Select b3rb.json layout." /></li>
+<li>The layout should now be present regardless of foxglove being connected to a websocket data source.
+<img alt="b3rb.json layout in foxglove." src="../images/foxglove_b3rb_layout.png" title="b3rb.json layout in foxglove." /></li>
+</ol>
 </details>
 <details class="picture">
 <summary>Example of depot world simulation with electrode running foxglove.</summary>
@@ -1179,7 +1186,7 @@ connect to it on <code>ws://localhost:8765</code>
 </details>
 <h3 id="optionally-run-electrode-with-the-rviz-2-backend-for-simulation">Optionally run Electrode with the <a href="../../../electrode/rviz2/">RVIZ 2 backend</a> for simulation.</h3>
 <p>Electrode can be optionally run with the <a href="../../../electrode/rviz2/">RVIZ 2 backend</a> for simulation, however, it requires a physical joystick device for input.
-<div class="language-bash highlight"><span class="filename">Electrode for simulation with RVIZ 2:</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2 launch electrode electrode.launch.py gui:<span class="o">=</span>rviz sim:<span class="o">=</span><span class="nb">true</span> joy:<span class="o">=</span><span class="nb">true</span>
+<div class="language-bash highlight"><span class="filename">Electrode for simulation with RVIZ 2:</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2 launch electrode electrode.launch.py rviz2:<span class="o">=</span><span class="nb">true</span> sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div></p>
 <details class="picture">
 <summary>Example of depot world simulation with electrode running rviz2.</summary>
