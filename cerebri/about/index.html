@@ -276,9 +276,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         About
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layers-of-verificaiton-and-validation" class="md-nav__link">
+    Layers of Verificaiton and Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zros-publish-and-subscribe-library" class="md-nav__link">
+    ZROS Publish and Subscribe Library
+  </a>
+  
+    <nav class="md-nav" aria-label="ZROS Publish and Subscribe Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-to-other-libraries" class="md-nav__link">
+    Comparison to Other Libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-structure" class="md-nav__link">
+    General Structure
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -975,6 +1033,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layers-of-verificaiton-and-validation" class="md-nav__link">
+    Layers of Verificaiton and Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zros-publish-and-subscribe-library" class="md-nav__link">
+    ZROS Publish and Subscribe Library
+  </a>
+  
+    <nav class="md-nav" aria-label="ZROS Publish and Subscribe Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-to-other-libraries" class="md-nav__link">
+    Comparison to Other Libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-structure" class="md-nav__link">
+    General Structure
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -992,8 +1092,72 @@
 
 
 <h1 id="about-cerebri">About Cerebri</h1>
-<p>Cerebri is a correct by construction autopilot. This software paradigm simplifies the verifcation and validation task through consideration of ease of verification at the the time of writing.</p>
-<p><a href="https://github.com/cognipilot/cerebri/tree/airy">Github</a></p>
+<p><a href="https://github.com/cognipilot/cerebri/tree/airy">Cerebri</a> is a correct by construction autopilot. This software paradigm simplifies the verifcation and validation task through the consideration of ease of verification during code creation.</p>
+<p>The verification approach relies on the faithful synthesis of mathematical control laws for a given vehicle dynamic model interacting with a finite state machine. A layered approach is used to ensure robustness of the sytem.</p>
+<h3 id="layers-of-verificaiton-and-validation">Layers of Verificaiton and Validation</h3>
+<ul>
+<li>MISRA C compliance. Follow closely the industry best practices as defined in the <a href="https://en.wikipedia.org/wiki/MISRA_C">MISRA C</a> standard. The verification of the high levels of system operation use the low level operating system and drivers as a foundation.</li>
+<li>On top of the the solid operating system and drivers, create control and estimation methods that interact with a given dynamic model. For interested readers, see this <a href="https://arxiv.org/abs/2211.03310">paper</a> of one such robust control strategy.</li>
+</ul>
+<h2 id="zros-publish-and-subscribe-library">ZROS Publish and Subscribe Library</h2>
+<p>After considering both the <a href="https://github.com/ros2/rclc">rclc</a> library and <a href="https://docs.zephyrproject.org/latest/services/zbus/index.html">ZBUS</a>, it was determined to be advantageous to construct a tailored publish/subscribe library for use in Cerebri.</p>
+<h3 id="comparison-to-other-libraries">Comparison to Other Libraries</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Thread-safe</th>
+<th>Misra C</th>
+<th>Community Base</th>
+<th>Separate Read/Write Locks</th>
+<th>Lines of Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rclc</td>
+<td>no</td>
+<td>no</td>
+<td>large</td>
+<td>N/A</td>
+<td>~29k</td>
+</tr>
+<tr>
+<td>ZBUS</td>
+<td>yes</td>
+<td>yes</td>
+<td>small</td>
+<td>no</td>
+<td>1409</td>
+</tr>
+<tr>
+<td>ZROS</td>
+<td>yes</td>
+<td>yes</td>
+<td>new library</td>
+<td>yes</td>
+<td>748</td>
+</tr>
+</tbody>
+</table>
+<p>While Cerebri was initially built around ZBUS, it was found too limiting due to the available topic listener and subscriber implementations. Instead of providing callback functions where the topic data structure is in context, ZROS signals the subscribers that a new message is availabe. It is then up to the subscriber to process the data. This is similar to a ZBUS subscriber, but it uses signals instead of message queues. In ZROS, it is imperative that the latest sensor data is available to each node, but skipping packets between nodes is acceptable. All messages describing the state of the vehicle are stateful, so dropping one message is not critical. This is also the goal for all input to the system. It should be assuemd that packets will be lost, and the requests of the user should be a state that is continually sent at a periodic rate.</p>
+<p>Cerebri is constructed using a set of reusable nodes. These nodes communicate using topics. ZROS is thread-safe and leverages a read semaphore and a write mutex lock on each topic. This allows multiple subscribers to read the data simultaneously.</p>
+<h2 id="general-structure">General Structure</h2>
+<p>In order to simplify the verification process, the vehicle management firmware is divided into various subcomponents.</p>
+<ul>
+<li><strong>Operating Systeam</strong>: Cerebri leverages the Zephyr RTOS, which is working towards <a href="https://www.zephyrproject.org/zephyr-rtos-moves-towards-misra-compliance/">MISRA C compliance</a>.</li>
+<li><strong>drivers</strong>: The drivers are low level operating system code to talk with various sensors, actuators etc. Drivers are primarily maintained in upstream Zephyr.</li>
+<li><strong>lib</strong>: The <a href="https://github.com/CogniPilot/cerebri/tree/25497bf9960c6ca74e98c1709d34c756ac4395a9/lib">libraries</a> in Cerebri are divided into application specific folders. The libraries are typically reusable modules that may be incorporated into an application. They interface the low level drivers with the ZROS library.<ul>
+<li><strong><em>actuate</em></strong>: Deals with actuating motors, servos, sound, lights etc.</li>
+<li><strong><em>core</em></strong>: Common application code and system workqueues.</li>
+<li><strong><em>dream</em></strong>: Simulation specific modules.</li>
+<li><strong><em>sense</em></strong>: Interfaces sensor drivers with the ZROS module</li>
+<li><strong><em>synapse</em></strong>: Communicaiton based modules</li>
+</ul>
+</li>
+<li><strong>app</strong>: The application folder is where the vehicle finite state machine, control, and estimation code reside. By tailoring these components to a specific vehicle and use case it makes it more flexible for users to adapt and it also makes the verification tasks simpler as there is less code dealing with generalizations and abstractions to allow reuse on multiple vehicles.</li>
+</ul>
+<p>This structure allows for focus on the applications specific code for verification and validation. The state machine of the <a href="../../reference_systems/b3rb/about/">B3RB</a> for example is written so that it can be easily adapted for <a href="https://en.wikipedia.org/wiki/Model_checking">model checking</a>. The algorithms in <a href="../../tools/cyecca/about/"><code>Cyecca</code></a> can also be analyzed with a dynamic model of the system to provide the mechanisms for hybrid model checking.</p>
 
               
             </article>
