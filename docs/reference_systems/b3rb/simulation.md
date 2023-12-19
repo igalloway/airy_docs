@@ -1,6 +1,6 @@
 # B3RB Simulation
 
-Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to Cerebri running ontop Zephyr RTOS `native_sim`.
+Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to [Cerebri](../../cerebri/about.md) running ontop Zephyr RTOS `native_sim`.
 
 ## Before running simulation
 
@@ -29,7 +29,7 @@ west build -b native_sim app/b3rb/ -p -t install
 
 ???+ tip "If using the foxglove backend for Electrode."
 
-     Make sure to have first run the `build_foxglove` script at some point and follow the prompts.
+     Make sure to have first run the `build_foxglove` script at some point and **follow the prompts**.
      ```bash title="Run build_foxglove script:"
      build_foxglove
      ```
@@ -40,16 +40,23 @@ To visualize and control navigation [run Electrode with the preffered backend se
 ### Run Electrode with the [foxglove backend](../../electrode/foxglove.md) for simulation.
 ```bash title="Electrode for simulation with foxglove:"
 ros2 launch electrode electrode.launch.py sim:=true
-``` 
-??? question "How do I open the foxglove studio viewer?"
+```
 
-    [Click here for more information on how to get foxglove studio and open it.](../../electrode/foxglove.md)
+??? question "Foxglove studio opened, how do I connect it to the simulation?"
 
-??? question "I opened foxglove, how do I connect it to the simulation?"
-
-    After launching the foxglove websocket bridge by passing to electrode `sim:=true`
+    After launching electrode with only passing `sim:=true`
     connect to it on `ws://localhost:8765`
-    ![Connect foxglove with simulation websocket](images/foxglove_simulation_socket.png "Connect foxglove with simulation web socket")
+    ![Connect foxglove with simulation websocket](images/foxglove_simulation_websocket.png "Connect foxglove with simulation web socket")
+
+???+ question "My foxglove studio connected but it's not showing what I would expect it to, how do I load the `b3rb` layout?"
+
+    1. Click the `LAYOUT` drop down in upper right followed by `Imoport from file...`
+    ![Select foxglove LAYOUT dropdown > Import from file...](images/foxglove_select_layout.png "Select foxglove LAYOUT dropdown > Import from file...")
+    2. Select the `b3rb.json` followed by pressing `Open` by navigating `Home > cognipilot > electrode > src > electrode > foxglove_layouts > b3rb.json`
+    ![Select b3rb.json layout.](images/foxglove_select_b3rb_layout_file.png "Select b3rb.json layout.")
+    3. The layout should now be present regardless of foxglove being connected to a websocket data source.
+    ![b3rb.json layout in foxglove.](images/foxglove_b3rb_layout.png "b3rb.json layout in foxglove.")
+
 
 ??? picture "Example of depot world simulation with electrode running foxglove."
 
@@ -59,7 +66,7 @@ ros2 launch electrode electrode.launch.py sim:=true
 ### Optionally run Electrode with the [RVIZ 2 backend](../../electrode/rviz2.md) for simulation.
 Electrode can be optionally run with the [RVIZ 2 backend](../../electrode/rviz2.md) for simulation, however, it requires a physical joystick device for input.
 ```bash title="Electrode for simulation with RVIZ 2:"
-ros2 launch electrode electrode.launch.py gui:=rviz sim:=true joy:=true
+ros2 launch electrode electrode.launch.py rviz2:=true sim:=true
 ```
 ??? picture "Example of depot world simulation with electrode running rviz2."
 
