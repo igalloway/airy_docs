@@ -828,7 +828,7 @@
         
           <li class="md-nav__item">
   <a href="#calling-casadi-based-function-from-cerebri" class="md-nav__link">
-    Calling Casadi based Function from Cerebri
+    Calling Casadi based function from Cerebri
   </a>
   
 </li>
@@ -1103,7 +1103,7 @@
         
           <li class="md-nav__item">
   <a href="#calling-casadi-based-function-from-cerebri" class="md-nav__link">
-    Calling Casadi based Function from Cerebri
+    Calling Casadi based function from Cerebri
   </a>
   
 </li>
@@ -1132,11 +1132,11 @@
 
 
 <h1 id="about-cyecca">About Cyecca</h1>
-<p><a href="https://github.com/cognipilot/cyecca">Cyecca</a> is a control and estimation library.  The library leverages <a href="http://casadi.org/">Casadi</a> based equation graphs and can be thought of the control and estimation equivalent of TensorFlow. The equation graph is used for <a href="https://en.wikipedia.org/wiki/Automatic_differentiation">automatic differentiation</a>, a numerically efficient method for computing jacobians. Casadi's core is written in C, with Python and Matlab wrappers. We leverage the Python library in Casadi. Casadi allows the use to create advanced geometric algorithms without advanced knowledge of embedded programming. The provides a route for rapid development.</p>
+<p><a href="https://github.com/cognipilot/cyecca">Cyecca</a> is a control and estimation library.  The library leverages <a href="http://casadi.org/">Casadi</a> based equation graphs and can be thought of the control and estimation equivalent of TensorFlow. The equation graph is used for <a href="https://en.wikipedia.org/wiki/Automatic_differentiation">automatic differentiation</a>, a numerically efficient method for computing jacobians. Casadi's core is written in C, with Python and Matlab wrappers. Cyecca leverages the Python library in Casadi. Casadi allows the user to create advanced geometric algorithms without advanced knowledge of embedded programming. This provides a route for rapid development.</p>
 <h2 id="b3rb-example"><a href="../../../reference_systems/b3rb/about/">B3RB</a> Example</h2>
-<p>For a complete example of how Cyecca may be used, we will focus on the <a href="https://github.com/CogniPilot/cerebri/tree/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/src/casadi/">B3RB</a>:</p>
+<p>For a complete example of how Cyecca may be used, the <a href="https://github.com/CogniPilot/cerebri/tree/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/src/casadi/">B3RB</a> will be used as an example.</p>
 <h3 id="generation-of-equations">Generation of Equations</h3>
-<p>We will now focus on how to leverage the Cyecca library to generate a simple rover estimator in 2D.</p>
+<p>The proceeding leverages the Cyecca library to generate a simple rover estimator in 2D.</p>
 <div class="language-python highlight"><span class="filename">Derive Rover Estimator:</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">derive_rover2d_estimator</span><span class="p">():</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># define symbols</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">x</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">SX</span><span class="o">.</span><span class="n">sym</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>  <span class="c1"># x position in world frame of rear axle (north)</span>
@@ -1178,7 +1178,7 @@ these may be thought of at linear and angular velocity multiplied by time.</p>
 </span></code></pre></div>
 <p>This represents the exact integration in SE(2), there are no numerical integration errors
 due to the geometric nature of the integration in the Lie Algebra, one may think of this as 
-the Lie Group equivalent of: x1 = x0 + u*dt, where x0 is the initial state, x1 is the final state, and u is the velocity, and dt is the change in time.</p>
+the Lie Group equivalent of: <span class="arithmatex">\(x_1 = x_0 + u*dt\)</span>, where <span class="arithmatex">\(x_0\)</span> is the initial state, <span class="arithmatex">\(x_1\)</span> is the final state, <span class="arithmatex">\(u\)</span> is the velocity, and <span class="arithmatex">\(dt\)</span> is the change in time.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="n">f_predict</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        <span class="s2">&quot;predict&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">param</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">u</span><span class="p">],</span> <span class="p">[</span><span class="n">X1</span><span class="o">.</span><span class="n">param</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;x0&quot;</span><span class="p">,</span> <span class="s2">&quot;omega&quot;</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;x1&quot;</span><span class="p">]</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="p">)</span>
@@ -1186,7 +1186,7 @@ the Lie Group equivalent of: x1 = x0 + u*dt, where x0 is the initial state, x1 i
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">eqs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;predict&quot;</span><span class="p">:</span> <span class="n">f_predict</span><span class="p">}</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">return</span> <span class="n">eqs</span>
 </span></code></pre></div>
-<p>Finally we use the casadi Function routine to construct and return the prediction function.</p>
+<p>Finally the casadi function routine is used to construct and return the prediction function.</p>
 <h4 id="code-generation-routines">Code Generation Routines</h4>
 <div class="language-py annotate no-copy highlight"><span class="filename">Generate code:</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">generate_code</span><span class="p">(</span><span class="n">eqs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">dest_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">)</span>
@@ -1212,16 +1212,15 @@ the Lie Group equivalent of: x1 = x0 + u*dt, where x0 is the initial state, x1 i
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="n">gen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
 </span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">gen</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">se</span>
 </span></code></pre></div>
-<p>Code generation is called:</p>
 <ol>
-<li>without mex, which is used for Matlab</li>
-<li>without cpp since Cerebri is focused on MISRA C</li>
-<li>without main, we we don't need a main function, just functions in a library</li>
-<li>with a header for use in the libray</li>
-<li>without mem, as internal memory is not necessary for these routines</li>
-<li>without export, as we don't need dll export</li>
-<li>with math, as we will leverage math routines</li>
-<li>with avoid_atack, as we want the data used for calculations to be expliciting passed in and not allocated with the stack of the function</li>
+<li>Without mex which is used for Matlab.</li>
+<li>Without cpp since <a href="../../../cerebri/about/#layers-of-verificaiton-and-validation">Cerebri is focused on MISRA C</a>.</li>
+<li>Without a main function, just use functions in a library.</li>
+<li>With a header for use in the libray.</li>
+<li>Without mem, as internal memory is not necessary for these routines.</li>
+<li>Without export, as there is no need for dll export.</li>
+<li>With math, as this leverages the math routines.</li>
+<li>With avoid_stack, so the data used for calculations is explicitly passed in and not allocated with the stack of the function.</li>
 </ol>
 <h4 id="generating-code">Generating Code</h4>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -1248,39 +1247,49 @@ the Lie Group equivalent of: x1 = x0 + u*dt, where x0 is the initial state, x1 i
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry run -C ~/cognipilot/tools/src/cyecca python3 b3rb.py
 </span></code></pre></div>
 <h3 id="adding-casadi-generated-code-to-apps">Adding Casadi Generated Code to Apps</h3>
-<p>Next we will add the generated source files to <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/CMakeLists.txt">CMake</a>.</p>
+<p>Next add the generated source files to <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/CMakeLists.txt">CMake</a>.</p>
 <div class="language-cmake highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">if</span> <span class="p">(</span><span class="s">CONFIG_CEREBRI_B3RB_CASADI</span><span class="p">)</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">SOURCE_FILES</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="s">src/casadi/gen/b3rb.c</span><span class="p">)</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">endif</span><span class="p">()</span>
 </span></code></pre></div>
-<h3 id="calling-casadi-based-function-from-cerebri">Calling Casadi based Function from Cerebri</h3>
-<p>It is now straight forward to call our generated Casadi function from within Cerebri.</p>
-<p>We have written an <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/src/estimate.c">estimator app</a> that collects the necessary information by subscribing to the following topics:
- * topic_imu: This provides the required angular velocity information
- * wheel_odometry: This provides the required distance travelled</p>
-<p>The app publishes:
- * estimator_odometry: Where we believe the robot to be</p>
-<p>The Casadi function call is:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">/* predict:(x0[3],omega,u)-&gt;(x1[3]) */</span><span class="w"></span>
+<h3 id="calling-casadi-based-function-from-cerebri">Calling Casadi based function from Cerebri</h3>
+<p>It is now straight forward to call the generated Casadi function from within Cerebri.</p>
+<p>The <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/src/estimate.c">estimator app</a> collects the necessary information by <strong><em>subscribing</em></strong> to the following topics:</p>
+<ul>
+<li><code>imu</code> topic provides the required angular velocity data.</li>
+<li><code>wheel_odometry</code> topic provides the required distance travelled.</li>
+</ul>
+<p>The <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/src/estimate.c">estimator app</a> <strong><em>publishes</em></strong>:</p>
+<ul>
+<li><code>estimator_odometry</code> topic contains the location the robot believes it is at.</li>
+</ul>
+<div class="language-c annotate no-copy highlight"><span class="filename">The Casadi function call:</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">/* predict:(x0[3],omega,u)-&gt;(x1[3]) */</span><span class="w"></span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span><span class="w"></span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">delta_theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span><span class="w"></span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">delta_theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span><span class="w">    </span><span class="c1">//(1)</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x1</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="c1">// LOG_DBG(&quot;predict&quot;);</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">CASADI_FUNC_ARGS</span><span class="p">(</span><span class="n">predict</span><span class="p">);</span><span class="w"></span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">delta_theta</span><span class="p">;</span><span class="w"></span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">;</span><span class="w"></span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="p">;</span><span class="w"></span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="n">CASADI_FUNC_CALL</span><span class="p">(</span><span class="n">predict</span><span class="p">);</span><span class="w"></span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span><span class="w">                   </span><span class="c1">//(2)</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">delta_theta</span><span class="p">;</span><span class="w">             </span><span class="c1">//(3)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">;</span><span class="w">                       </span><span class="c1">//(4)</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="p">;</span><span class="w">                        </span><span class="c1">//(5)</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="n">CASADI_FUNC_CALL</span><span class="p">(</span><span class="n">predict</span><span class="p">);</span><span class="w">          </span><span class="c1">//(6)</span>
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="c1">// update x, W</span>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">handle_update</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">);</span><span class="w"></span>
 </span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span><span class="w"></span>
 </span></code></pre></div>
+<ol>
+<li>Given the angular velocity <span class="arithmatex">\(\omega\)</span> from the z axis of the gyroscope, multiply the delta time <span class="arithmatex">\(dt\)</span> since the last estimator run, and then compute the angular change <span class="arithmatex">\(d\theta\)</span> in radians. </li>
+<li>Load the function argument for initial state <span class="arithmatex">\(x_0\)</span> into the Casadi function.</li>
+<li>Load the function argument for angular velocity <span class="arithmatex">\(\omega\)</span> into the Casadi function.</li>
+<li>Load the function argument for velocity <span class="arithmatex">\(u\)</span> into the Casadi function.</li>
+<li>Set the result <span class="arithmatex">\(x_1\)</span> in the res double array.</li>
+<li>The macro CASADI_FUNC_ARGS allocates the args, res, w (work), iw (integer work) vectors which are used in the function call.</li>
+</ol>
 <p>Here the signature is provided in the <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb/src/casadi/gen/b3rb.c#L1940">generated code</a></p>
-<p>Given the angular velocity omega from the z axis of the gyroscope, we multiply by the delta time since the last estimator run, and then compute the angular change theta in radians. Next we load the function arguments (x0, omega, u), into the Casadi function, and also set the result, x1, in the res double array. The macro CASADI_FUNC_ARGS allocates the args, res, w (work), iw (integer work) fectors which are used in the function call.</p>
 <p>The macros are defined <a href="https://github.com/CogniPilot/cerebri/blob/25497bf9960c6ca74e98c1709d34c756ac4395a9/include/cerebri/core/casadi.h">here</a>.</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#define CASADI\_FUNC\_ARGS(name)              \</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="cp">    casadi_int iw[name##_SZ_IW];            \</span>
@@ -1343,6 +1352,12 @@ the Lie Group equivalent of: x1 = x0 + u*dt, where x0 is the initial state, x1 i
     
     
       <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
