@@ -50,9 +50,9 @@ ros2 launch electrode electrode.launch.py sim:=true
 
 ???+ question "My foxglove studio connected but it's not showing what I would expect it to, how do I load the `b3rb` layout?"
 
-    1. Click the `LAYOUT` drop down in upper right followed by `Imoport from file...`
-    ![Select foxglove LAYOUT dropdown > Import from file...](images/foxglove_select_layout.png "Select foxglove LAYOUT dropdown > Import from file...")
-    2. Select the `b3rb.json` followed by pressing `Open` by navigating `Home > cognipilot > electrode > src > electrode > foxglove_layouts > b3rb.json`
+    1. Click the foxglove logo drop down in upper left followed by `Imoport layout from file...`
+    ![Select foxglove logo drop down > Import layout from file...](images/foxglove_select_layout.png "Select foxglove logo drop down > Import layout from file...")
+    2. Click the `b3rb.json` file followed by clicking `Select` by navigating `Home > cognipilot > electrode > src > electrode > foxglove_layouts > b3rb.json`
     ![Select b3rb.json layout.](images/foxglove_select_b3rb_layout_file.png "Select b3rb.json layout.")
     3. The layout should now be present regardless of foxglove being connected to a websocket data source.
     ![b3rb.json layout in foxglove.](images/foxglove_b3rb_layout.png "b3rb.json layout in foxglove.")
@@ -95,7 +95,4 @@ ros2 launch b3rb_gz_bringup sil.launch.py
     <video controls>
       <source src="../videos/b3rb_depot_foxglove.mp4" type="video/mp4">
     </video>
-
-
-
 

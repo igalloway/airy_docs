@@ -1,6 +1,6 @@
 # B3RB Electrode Overview
 
-[Electrode](../../electrode/about.md) can be run with Foxglove or RVIZ 2 backends for the real and [simulated B3RB](../simulation.md). Foxglove is the reccomended and default backend for Electrode.
+[Electrode](../../electrode/about.md) can be run with Foxglove or RVIZ 2 backends for the real and [simulated B3RB](./simulation.md). Foxglove is the reccomended and default backend for Electrode.
 
 Electrode uses a Joystick ([virtual](#foxglove-cognipilot-joystick-extension) or [physical](#example-of-using-electrode-with-a-logitech-f310)) to control the B3RB.
 
@@ -74,7 +74,7 @@ The foxglove CogniPilot Joystick extension allows users to control the B3RB with
 ### Example of using electrode with a [Logitech F310](https://www.logitechg.com/en-us/products/gamepads/f310-gamepad.940-000110.html)
 ??? picture "Logitech F310 button layout."
 
-    ![F310](images/f310.jpg "F310")
+    ![F310](images/f310.png "F310")
 
 #### Selecting a Mode
 
@@ -95,5 +95,5 @@ The foxglove CogniPilot Joystick extension allows users to control the B3RB with
 
 #### Front Lights
 
-* **RB**: Front lights on
-* **LB**: Front lights off
+* **LB**: Front lights on
+* **RB**: Front lights off

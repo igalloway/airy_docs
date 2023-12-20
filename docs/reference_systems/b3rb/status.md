@@ -20,40 +20,40 @@ The tailights on the B3RB are used for showing the current system status and bre
 
 ---
 ### **Startup Lights**
-??? light "[ :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:{.p_w} ]  [ :octicons-dot-fill-24:{.p_w} :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:{.p_g} ] Startup breathing light pattern [Safety On, Disarm, Mode Unknown]."
+??? lighting "[ :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:{.p_w} ]  [ :octicons-dot-fill-24:{.p_w} :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:{.p_g} ] Startup breathing light pattern [Safety On, Disarm, Mode Unknown]."
 
 ---
 ### **Safety Lights**
 #### Safety On Lights
-??? light "[ :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24: :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} ] The outer set of lights are **green** when the **Safety** is **On**."
+??? lighting "[ :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24: :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} ] The outer set of lights are **green** when the **Safety** is **On**."
 
 #### Safety Off Lights
-??? light "[ :octicons-dot-fill-24:{.p_r} :octicons-dot-fill-24: :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_r} ] The outer set of lights are **red** when the **Safety** is **Off**."
+??? lighting "[ :octicons-dot-fill-24:{.p_r} :octicons-dot-fill-24: :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_r} ] The outer set of lights are **red** when the **Safety** is **Off**."
 
 ---
 ### **Arming and Critical Fuel Lights**
 #### Disarmed Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:] The middle set of lights are **green** when **Disarmed**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24:] The middle set of lights are **green** when **Disarmed**."
 
 #### Armed Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_r} :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_r} :octicons-dot-fill-24: ] The middle set of lights are **red** when **Armed**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_r} :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_r} :octicons-dot-fill-24: ] The middle set of lights are **red** when **Armed**."
 
 #### Fuel Critical Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_y} :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_y} :octicons-dot-fill-24: ] The middle set of lights are **yellow** when **Fuel is Critical**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_y} :octicons-dot-fill-24: ]  [ :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_y} :octicons-dot-fill-24: ] The middle set of lights are **yellow** when **Fuel is Critical**."
 
 ---
 ### **Mode Lights**
 #### Mode Unknown Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_w} ]  [ :octicons-dot-fill-24:{.p_w} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **white** when **Mode Unknown**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_w} ]  [ :octicons-dot-fill-24:{.p_w} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **white** when **Mode Unknown**."
 
 #### Mode Manual Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} ]  [ :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **green** when **Mode Manual**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_g} ]  [ :octicons-dot-fill-24:{.p_g} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **green** when **Mode Manual**."
 
 #### Mode CMD_VEL Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_b} ]  [ :octicons-dot-fill-24:{.p_b} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **blue** when **Mode CMD_VEL**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_b} ]  [ :octicons-dot-fill-24:{.p_b} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **blue** when **Mode CMD_VEL**."
 
 #### Mode Calibration Lights
-??? light "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_y} ]  [ :octicons-dot-fill-24:{.p_y} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **yellow** when **Mode Calibration**."
+??? lighting "[ :octicons-dot-fill-24: :octicons-dot-fill-24: :octicons-dot-fill-24:{.p_y} ]  [ :octicons-dot-fill-24:{.p_y} :octicons-dot-fill-24: :octicons-dot-fill-24:] The inner set of lights are **yellow** when **Mode Calibration**."
 
 ---
 
