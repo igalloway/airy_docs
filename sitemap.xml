@@ -56,16 +56,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airy.cognipilot.org/electrode/foxglove/</loc>
-         <lastmod>2023-12-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airy.cognipilot.org/electrode/rviz2/</loc>
-         <lastmod>2023-12-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airy.cognipilot.org/getting_started/install/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>

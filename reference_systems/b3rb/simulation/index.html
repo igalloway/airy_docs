@@ -633,34 +633,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../electrode/foxglove/" class="md-nav__link">
-        Foxglove
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../electrode/rviz2/" class="md-nav__link">
-        RVIZ 2
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -1160,7 +1132,7 @@
 </span></code></pre></div></p>
 </details>
 <p>To visualize and control navigation <a href="../../../electrode/about/">run Electrode with the preffered backend set</a>, the default and reccomended is foxglove.</p>
-<h3 id="run-electrode-with-the-foxglove-backend-for-simulation">Run Electrode with the <a href="../../../electrode/foxglove/">foxglove backend</a> for simulation.</h3>
+<h3 id="run-electrode-with-the-foxglove-backend-for-simulation">Run Electrode with the <a href="../electrode/">foxglove backend</a> for simulation.</h3>
 <div class="language-bash highlight"><span class="filename">Electrode for simulation with foxglove:</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2 launch electrode electrode.launch.py sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div>
 <details class="question">
@@ -1184,8 +1156,8 @@ connect to it on <code>ws://localhost:8765</code>
 <summary>Example of depot world simulation with electrode running foxglove.</summary>
 <p><img alt="B3RB Depot world simulation with foxglove" src="../images/b3rb_depot_foxglove.png" title="B3RB Depot world simulation with foxglove" /></p>
 </details>
-<h3 id="optionally-run-electrode-with-the-rviz-2-backend-for-simulation">Optionally run Electrode with the <a href="../../../electrode/rviz2/">RVIZ 2 backend</a> for simulation.</h3>
-<p>Electrode can be optionally run with the <a href="../../../electrode/rviz2/">RVIZ 2 backend</a> for simulation, however, it requires a physical joystick device for input.
+<h3 id="optionally-run-electrode-with-the-rviz-2-backend-for-simulation">Optionally run Electrode with the <a href="../electrode/">RVIZ 2 backend</a> for simulation.</h3>
+<p>Electrode can be optionally run with the <a href="../electrode/">RVIZ 2 backend</a> for simulation, however, it requires a physical joystick device for input.
 <div class="language-bash highlight"><span class="filename">Electrode for simulation with RVIZ 2:</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2 launch electrode electrode.launch.py rviz2:<span class="o">=</span><span class="nb">true</span> sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div></p>
 <details class="picture">
