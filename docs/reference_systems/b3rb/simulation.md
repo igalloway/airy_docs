@@ -37,7 +37,7 @@ west build -b native_sim app/b3rb/ -p -t install
 
 To visualize and control navigation [run Electrode with the preffered backend set](../../electrode/about.md), the default and reccomended is foxglove.
 
-### Run Electrode with the [foxglove backend](../../electrode/foxglove.md) for simulation.
+### Run Electrode with the [foxglove backend](./electrode.md) for simulation.
 ```bash title="Electrode for simulation with foxglove:"
 ros2 launch electrode electrode.launch.py sim:=true
 ```
@@ -63,8 +63,8 @@ ros2 launch electrode electrode.launch.py sim:=true
     ![B3RB Depot world simulation with foxglove](images/b3rb_depot_foxglove.png "B3RB Depot world simulation with foxglove")
 
 
-### Optionally run Electrode with the [RVIZ 2 backend](../../electrode/rviz2.md) for simulation.
-Electrode can be optionally run with the [RVIZ 2 backend](../../electrode/rviz2.md) for simulation, however, it requires a physical joystick device for input.
+### Optionally run Electrode with the [RVIZ 2 backend](./electrode.md) for simulation.
+Electrode can be optionally run with the [RVIZ 2 backend](./electrode.md) for simulation, however, it requires a physical joystick device for input.
 ```bash title="Electrode for simulation with RVIZ 2:"
 ros2 launch electrode electrode.launch.py rviz2:=true sim:=true
 ```

@@ -80,8 +80,6 @@ nav:
       - Worlds: dream/worlds/worlds.md
     - Electrode:
       - About: electrode/about.md
-      - Foxglove: electrode/foxglove.md
-      - RVIZ 2: electrode/rviz2.md
     - Helmet:
       - About: helmet/about.md
     - Tools:
