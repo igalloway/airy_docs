@@ -212,3 +212,5 @@ The macros are defined [here](https://github.com/CogniPilot/cerebri/blob/25497bf
 #define CASADI\_FUNC\_CALL(name) \
     name(args, res, iw, w, mem);
 ```
+
+An Ipython notebook of this example can be found [here](https://github.com/CogniPilot/cyecca/blob/3c23e2830f630872b464c6af3172872c8e1bb075/notebook/Rover2DOdom.ipynb)
