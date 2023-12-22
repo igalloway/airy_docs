@@ -1,7 +1,5 @@
 # B3RB Platform Overview
 
-## Example of Navigation
-<video controls>
-  <source src="../videos/b3rb.mp4" type="video/mp4">
-</video>
+The B3RB platform has both a [simulation](./simulation.md) and [real vehicle](./hardware.md) as a reference system for Ackermann based vehicles.
 
+To use the B3RB follow the [setup](./setup.md) and the guide on [operating the platform](./operate.md).
