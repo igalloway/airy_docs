@@ -1233,18 +1233,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#run-electrode-with-the-foxglove-backend-for-simulation" class="md-nav__link">
+  <a href="#run-electrode-with-the-foxglove-studio-backend-for-b3rb-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Electrode with the foxglove backend for simulation.
+      Run Electrode with the foxglove-studio backend for B3RB simulation.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optionally-run-electrode-with-the-rviz-2-backend-for-simulation" class="md-nav__link">
+  <a href="#optionally-run-electrode-with-the-rviz-2-backend-for-b3rb-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Optionally run Electrode with the RVIZ 2 backend for simulation.
+      Optionally run Electrode with the RVIZ 2 backend for B3RB simulation.
     </span>
   </a>
   
@@ -1372,18 +1372,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#run-electrode-with-the-foxglove-backend-for-simulation" class="md-nav__link">
+  <a href="#run-electrode-with-the-foxglove-studio-backend-for-b3rb-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Electrode with the foxglove backend for simulation.
+      Run Electrode with the foxglove-studio backend for B3RB simulation.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optionally-run-electrode-with-the-rviz-2-backend-for-simulation" class="md-nav__link">
+  <a href="#optionally-run-electrode-with-the-rviz-2-backend-for-b3rb-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Optionally run Electrode with the RVIZ 2 backend for simulation.
+      Optionally run Electrode with the RVIZ 2 backend for B3RB simulation.
     </span>
   </a>
   
@@ -1444,19 +1444,18 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>pull
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>west<span class="w"> </span>update
 </span></code></pre></div>
-<p>Build the Cerebri for <code>native_sim</code> and install it so it can be found.
+<p>Build the Cerebri for <code>native_sim</code>, install and source it so it can be found.
 <div class="language-bash highlight"><span class="filename">Build and install Cerebri for native_sim:</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>west<span class="w"> </span>build<span class="w"> </span>-b<span class="w"> </span>native_sim<span class="w"> </span>app/b3rb/<span class="w"> </span>-p<span class="w"> </span>-t<span class="w"> </span>install
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </span></code></pre></div></p>
 <h2 id="run-electrode">Run Electrode</h2>
 <details class="tip" open="open">
 <summary>If using the foxglove backend for Electrode.</summary>
-<p>Make sure to have first run the <code>build_foxglove</code> script at some point and <strong>follow the prompts</strong>.
- <div class="language-bash highlight"><span class="filename">Run build_foxglove script:</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>build_foxglove
-</span></code></pre></div></p>
+<p>Make sure to have first followed instructions to <a href="../../../electrode/about/#install-foxglove-studio-and-the-foxglove-cognipilot-joystick-extension">install foxglove-studio and the foxglove CogniPilot Joystick extension</a>.</p>
 </details>
-<p>To visualize and control navigation <a href="../../../electrode/about/">run Electrode with the preffered backend set</a>, the default and reccomended is foxglove.</p>
-<h3 id="run-electrode-with-the-foxglove-backend-for-simulation">Run Electrode with the <a href="../electrode/">foxglove backend</a> for simulation.</h3>
-<div class="language-bash highlight"><span class="filename">Electrode for simulation with foxglove:</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>sim:<span class="o">=</span><span class="nb">true</span>
+<p>To visualize and control the simulated B3RB it is reccomended to understand the <a href="../../../electrode/about/">key concepts and backend options with Electrode</a>, the default Electrode backend is foxglove-studio.</p>
+<h3 id="run-electrode-with-the-foxglove-studio-backend-for-b3rb-simulation">Run Electrode with the <a href="../electrode/">foxglove-studio backend for B3RB</a> simulation.</h3>
+<div class="language-bash highlight"><span class="filename">Electrode for simulation with foxglove:</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div>
 <details class="question">
 <summary>Foxglove studio opened, how do I connect it to the simulation?</summary>
@@ -1464,10 +1463,14 @@
 connect to it on <code>ws://localhost:8765</code>
 <img alt="Connect foxglove with simulation websocket" src="../images/foxglove_simulation_websocket.png" title="Connect foxglove with simulation web socket" /></p>
 </details>
-<details class="question" open="open">
-<summary>My foxglove studio connected but it's not showing what I would expect it to, how do I load the <code>b3rb</code> layout?</summary>
+<details class="picture">
+<summary>Example of depot world simulation with electrode running foxglove.</summary>
+<p><img alt="B3RB Depot world simulation with foxglove" src="../images/b3rb_depot_foxglove.png" title="B3RB Depot world simulation with foxglove" /></p>
+</details>
+<details class="question">
+<summary>My foxglove studio connected but it's not showing what I would expect it to, how do I load the <code>b3rb.json</code> layout file?</summary>
 <ol>
-<li>Click the foxglove logo drop down in upper left followed by <code>Imoport layout from file...</code>
+<li>Click the foxglove logo drop down in upper left followed by <code>Import layout from file...</code>
 <img alt="Select foxglove logo drop down &gt; Import layout from file..." src="../images/foxglove_select_layout.png" title="Select foxglove logo drop down &gt; Import layout from file..." /></li>
 <li>Click the <code>b3rb.json</code> file followed by clicking <code>Select</code> by navigating <code>Home &gt; cognipilot &gt; electrode &gt; src &gt; electrode &gt; foxglove_layouts &gt; b3rb.json</code>
 <img alt="Select b3rb.json layout." src="../images/foxglove_select_b3rb_layout_file.png" title="Select b3rb.json layout." /></li>
@@ -1475,13 +1478,9 @@ connect to it on <code>ws://localhost:8765</code>
 <img alt="b3rb.json layout in foxglove." src="../images/foxglove_b3rb_layout.png" title="b3rb.json layout in foxglove." /></li>
 </ol>
 </details>
-<details class="picture">
-<summary>Example of depot world simulation with electrode running foxglove.</summary>
-<p><img alt="B3RB Depot world simulation with foxglove" src="../images/b3rb_depot_foxglove.png" title="B3RB Depot world simulation with foxglove" /></p>
-</details>
-<h3 id="optionally-run-electrode-with-the-rviz-2-backend-for-simulation">Optionally run Electrode with the <a href="../electrode/">RVIZ 2 backend</a> for simulation.</h3>
-<p>Electrode can be optionally run with the <a href="../electrode/">RVIZ 2 backend</a> for simulation, however, it requires a physical joystick device for input.
-<div class="language-bash highlight"><span class="filename">Electrode for simulation with RVIZ 2:</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>rviz2:<span class="o">=</span><span class="nb">true</span><span class="w"> </span>sim:<span class="o">=</span><span class="nb">true</span>
+<h3 id="optionally-run-electrode-with-the-rviz-2-backend-for-b3rb-simulation">Optionally run Electrode with the <a href="../electrode/">RVIZ 2 backend</a> for B3RB simulation.</h3>
+<p>Electrode can be optionally run with the <a href="../electrode/">RVIZ 2 backend</a> for simulation, however, it requires a <a href="../../../electrode/about/#example-of-using-electrode-with-a-physical-joystick-for-b3rb">physical joystick device</a> for input.
+<div class="language-bash highlight"><span class="filename">Electrode for simulation with RVIZ 2:</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>rviz2:<span class="o">=</span><span class="nb">true</span><span class="w"> </span>sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div></p>
 <details class="picture">
 <summary>Example of depot world simulation with electrode running rviz2.</summary>
@@ -1489,7 +1488,7 @@ connect to it on <code>ws://localhost:8765</code>
 </details>
 <h2 id="run-b3rb-sil">Run B3RB SIL</h2>
 <p>The default dream world for B3RB is the <a href="../../../dream/worlds/worlds/#basic-map-world">basic map world</a>.
-<div class="language-bash highlight"><span class="filename">Launch simulation with basic map world:</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>b3rb_gz_bringup<span class="w"> </span>sil.launch.py
+<div class="language-bash highlight"><span class="filename">Launch simulation with basic map world:</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>b3rb_gz_bringup<span class="w"> </span>sil.launch.py
 </span></code></pre></div></p>
 <details class="question">
 <summary>My ROS 2 cerebri_bringup node is showing an error and is keeping simulation from running.</summary>
@@ -1497,7 +1496,7 @@ connect to it on <code>ws://localhost:8765</code>
 </details>
 <div class="admonition tip">
 <p class="admonition-title"><strong>If running on a machine with a powerful graphics card optionally run the more gaphics intensive <a href="../../../dream/worlds/worlds/#depot-world">depot world</a>.</strong></p>
-<div class="language-bash highlight"><span class="filename">Launch simulation with depot world:</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>b3rb_gz_bringup<span class="w"> </span>sil.launch.py<span class="w"> </span>world:<span class="o">=</span>depot
+<div class="language-bash highlight"><span class="filename">Launch simulation with depot world:</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>b3rb_gz_bringup<span class="w"> </span>sil.launch.py<span class="w"> </span>world:<span class="o">=</span>depot
 </span></code></pre></div>
 </div>
 <h2 id="video-example-of-using-the-simulation">Video example of using the simulation</h2>
