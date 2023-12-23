@@ -1,6 +1,6 @@
 # B3RB Simulation
 
-Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to [Cerebri](../../cerebri/about.md) running ontop Zephyr RTOS `native_sim`.
+Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to [Cerebri](../../cerebri/about.md) running on top of the Zephyr RTOS `native_sim`.
 
 ## Before running simulation
 
@@ -33,7 +33,7 @@ source ~/.bashrc
      Make sure to have first followed instructions to [install foxglove-studio and the foxglove CogniPilot Joystick extension](../../electrode/about.md#install-foxglove-studio-and-the-foxglove-cognipilot-joystick-extension).
 
 
-To visualize and control the simulated B3RB it is reccomended to understand the [key concepts and backend options with Electrode](../../electrode/about.md), the default Electrode backend is foxglove-studio.
+To visualize and control the simulated B3RB it is recommended to understand the [key concepts and backend options with Electrode](../../electrode/about.md), the default Electrode backend is foxglove-studio.
 
 ### Run Electrode with the [foxglove-studio backend for B3RB](./electrode.md) simulation.
 ```bash title="Electrode for simulation with foxglove:"
@@ -80,7 +80,7 @@ ros2 launch b3rb_gz_bringup sil.launch.py
 
     If the simulation launch script is throwing an error about cerebri_bringup make sure that [cerebri is built, installed and sourced properly for `native_sim`](#build-cerebri-for-native_sim).
 
-!!! tip "**If running on a machine with a powerful graphics card optionally run the more gaphics intensive [depot world](../../dream/worlds/worlds.md#depot-world).**"
+!!! tip "**If running on a machine with a powerful graphics card optionally run the more graphics intensive [depot world](../../dream/worlds/worlds.md#depot-world).**"
 
     ```bash title="Launch simulation with depot world:"
     ros2 launch b3rb_gz_bringup sil.launch.py world:=depot

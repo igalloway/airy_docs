@@ -9,7 +9,7 @@ The tailights on the B3RB are used for showing the current system status and bre
         * cerebri/app/b3rb/prj.conf setting for [CONFIG_CEREBRI_B3RB_LIGHTING=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/prj.conf#L14)
         * cerebri/app/b3rb/prj.conf setting for [CONFIG_CEREBRI_ACTUATE_LED_ARRAY=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/prj.conf#L18)
         * cerebri/app/b3rb/boards/mr_canhubk3.conf setting for [CONFIG_LED_STRIP=y CONFIG_APA102_STRIP=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/boards/mr_canhubk3.conf#L5-L6)
-    * If the status lights are not breathing and there is no [startup sound](#flight-of-the-alicanto) it can be a sign there was a potential power event that occured and the PMIC triggered the FS26 watchdog.
+    * If the status lights are not breathing and there is no [startup sound](#flight-of-the-alicanto) it can be a sign there was a potential power event that occurred and the PMIC triggered the FS26 watchdog.
     Steps to fix watchdog timeout:
         1. Check all wiring is plugged in correctly.
         2. Power off the board.
@@ -77,7 +77,7 @@ These sounds allow for audio based system diagnosis.
         * Proper ADAP board revision (Rev C).
         * Buzzer connection to GPS port on ADAP.
         * prj.conf setting for [CONFIG_CEREBRI_ACTUATE_SOUND=y](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/prj.conf#L19)
-    * If there is no startup sound when powered on and the [status lights are not breathing](#startup-lights) there is a potential that a power event occured and the PMIC triggered the FS26 watchdog. Steps to fix watchdog timeout:
+    * If there is no startup sound when powered on and the [status lights are not breathing](#startup-lights) there is a potential that a power event occurred and the PMIC triggered the FS26 watchdog. Steps to fix watchdog timeout:
         1. Check all wiring is plugged in correctly.
         2. Power off the board.
         4. Remove the jumper JP1 (pins 1-2 open), which is connected by default.
@@ -99,7 +99,7 @@ These sounds allow for audio based system diagnosis.
     * The rejection sound comes from the [Finite State Machine (FSM)](https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/src/fsm.c#L168-L244) rejecting a transition request by the request not passing the transition guards.
     * More information about the request rejection can be seen in with: 
         * `ros2 topic echo /cerebri/out/status` 
-        * Electrode below the fuel guage in the Foxglove layout. 
+        * Electrode below the fuel gauge in the Foxglove layout. 
 
 
 ---
@@ -128,14 +128,14 @@ These sounds allow for audio based system diagnosis.
 ---
 ### **Safety Sounds**
 #### Safety Off Sound
-??? sound "Morse Code ***S*** increasing long octives ***(- - -)***"
+??? sound "Morse Code ***S*** increasing long octaves ***(- - -)***"
 
     <audio controls="controls">
       <source type="audio/mp3" src="../sounds/safety_off.mp3"></source>
     </audio>
 
 #### Safety On Sound
-??? sound "Morse Code ***S*** decreasing long octives ***(- - -)***"
+??? sound "Morse Code ***S*** decreasing long octaves ***(- - -)***"
 
     <audio controls="controls">
       <source type="audio/mp3" src="../sounds/safety_on.mp3"></source>
