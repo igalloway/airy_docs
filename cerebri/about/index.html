@@ -346,9 +346,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#layers-of-verificaiton-and-validation" class="md-nav__link">
+  <a href="#layers-of-verification-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
-      Layers of Verificaiton and Validation
+      Layers of Verification and Validation
     </span>
   </a>
   
@@ -1317,9 +1317,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#layers-of-verificaiton-and-validation" class="md-nav__link">
+  <a href="#layers-of-verification-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
-      Layers of Verificaiton and Validation
+      Layers of Verification and Validation
     </span>
   </a>
   
@@ -1377,11 +1377,11 @@
 
 
 <h1 id="about-cerebri">About Cerebri</h1>
-<p><a href="https://github.com/cognipilot/cerebri/tree/airy">Cerebri</a> is a correct by construction autopilot. This software paradigm simplifies the verifcation and validation task through the consideration of ease of verification during code creation.</p>
-<p>The verification approach relies on the faithful synthesis of mathematical control laws for a given vehicle dynamic model interacting with a finite state machine. A layered approach is used to ensure robustness of the sytem.</p>
-<h3 id="layers-of-verificaiton-and-validation">Layers of Verificaiton and Validation</h3>
+<p><a href="https://github.com/cognipilot/cerebri/tree/airy">Cerebri</a> is a correct by construction autopilot. This software paradigm simplifies the verification and validation task through the consideration of ease of verification during code creation.</p>
+<p>The verification approach relies on the faithful synthesis of mathematical control laws for a given vehicle dynamic model interacting with a finite state machine. A layered approach is used to ensure robustness of the system.</p>
+<h3 id="layers-of-verification-and-validation">Layers of Verification and Validation</h3>
 <ul>
-<li>MISRA C compliance. Follow closely the industry best practices as defined in the <a href="https://en.wikipedia.org/wiki/MISRA_C">MISRA C</a> standard. The verification of the high levels of system operation use the low level operating system and drivers as a foundation.</li>
+<li>MISRA C compliance. Developers follow closely the industry best practices as defined in the <a href="https://en.wikipedia.org/wiki/MISRA_C">MISRA C</a> standard. The verification of the high levels system operation relies upon then low level operating system and drivers as a foundation.</li>
 <li>On top of the the solid operating system and drivers, create control and estimation methods that interact with a given dynamic model. For interested readers, see this <a href="https://arxiv.org/abs/2211.03310">paper</a> of one such robust control strategy.</li>
 </ul>
 <h2 id="zros-publish-and-subscribe-library">ZROS Publish and Subscribe Library</h2>
@@ -1425,7 +1425,7 @@
 </tr>
 </tbody>
 </table>
-<p>While Cerebri was initially built around ZBUS, it was found too limiting due to the available topic listener and subscriber implementations. Instead of providing callback functions where the topic data structure is in context, ZROS signals the subscribers that a new message is availabe. It is then up to the subscriber to process the data. This is similar to a ZBUS subscriber, but it uses signals instead of message queues. In ZROS, it is imperative that the latest sensor data is available to each node, but skipping packets between nodes is acceptable. All messages describing the state of the vehicle are stateful, so dropping one message is not critical. This is also the goal for all input to the system. It should be assuemd that packets will be lost, and the requests of the user should be a state that is continually sent at a periodic rate.</p>
+<p>While Cerebri was initially built around ZBUS, it was found too limiting due to the available topic listener and subscriber implementations. Instead of providing callback functions where the topic data structure is in context, ZROS signals the subscribers that a new message is available. It is then up to the subscriber to process the data. This is similar to a ZBUS subscriber, but it uses signals instead of message queues. In ZROS, it is imperative that the latest sensor data is available to each node, but skipping packets between nodes is acceptable. All messages describing the state of the vehicle are stateful, so dropping one message is not critical. This is also the goal for all input to the system. It should be assuemd that packets will be lost, and the requests of the user should be a state that is continually sent at a periodic rate.</p>
 <p>Cerebri is constructed using a set of reusable nodes. These nodes communicate using topics. ZROS is thread-safe and leverages a read semaphore and a write mutex lock on each topic. This allows multiple subscribers to read the data simultaneously.</p>
 <h2 id="general-structure">General Structure</h2>
 <p>In order to simplify the verification process, the vehicle management firmware is divided into various subcomponents.</p>

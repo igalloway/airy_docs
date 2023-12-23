@@ -2063,7 +2063,7 @@
 <li>cerebri/app/b3rb/boards/mr_canhubk3.conf setting for <a href="https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/boards/mr_canhubk3.conf#L5-L6">CONFIG_LED_STRIP=y CONFIG_APA102_STRIP=y</a></li>
 </ul>
 </li>
-<li>If the status lights are not breathing and there is no <a href="#flight-of-the-alicanto">startup sound</a> it can be a sign there was a potential power event that occured and the PMIC triggered the FS26 watchdog.
+<li>If the status lights are not breathing and there is no <a href="#flight-of-the-alicanto">startup sound</a> it can be a sign there was a potential power event that occurred and the PMIC triggered the FS26 watchdog.
 Steps to fix watchdog timeout:<ol>
 <li>Check all wiring is plugged in correctly.</li>
 <li>Power off the board.</li>
@@ -2143,7 +2143,7 @@ Steps to fix watchdog timeout:<ol>
 <li>prj.conf setting for <a href="https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/prj.conf#L19">CONFIG_CEREBRI_ACTUATE_SOUND=y</a></li>
 </ul>
 </li>
-<li>If there is no startup sound when powered on and the <a href="#startup-lights">status lights are not breathing</a> there is a potential that a power event occured and the PMIC triggered the FS26 watchdog. Steps to fix watchdog timeout:<ol>
+<li>If there is no startup sound when powered on and the <a href="#startup-lights">status lights are not breathing</a> there is a potential that a power event occurred and the PMIC triggered the FS26 watchdog. Steps to fix watchdog timeout:<ol>
 <li>Check all wiring is plugged in correctly.</li>
 <li>Power off the board.</li>
 <li>Remove the jumper JP1 (pins 1-2 open), which is connected by default.</li>
@@ -2168,7 +2168,7 @@ Steps to fix watchdog timeout:<ol>
 <li>The rejection sound comes from the <a href="https://github.com/CogniPilot/cerebri/blob/e201ca1f44f937eae2e36f3125932a732e6b79d0/app/b3rb/src/fsm.c#L168-L244">Finite State Machine (FSM)</a> rejecting a transition request by the request not passing the transition guards.</li>
 <li>More information about the request rejection can be seen in with: <ul>
 <li><code>ros2 topic echo /cerebri/out/status</code> </li>
-<li>Electrode below the fuel guage in the Foxglove layout. </li>
+<li>Electrode below the fuel gauge in the Foxglove layout. </li>
 </ul>
 </li>
 </ul>
@@ -2200,14 +2200,14 @@ Steps to fix watchdog timeout:<ol>
 <h3 id="safety-sounds"><strong>Safety Sounds</strong></h3>
 <h4 id="safety-off-sound">Safety Off Sound</h4>
 <details class="sound">
-<summary>Morse Code <strong><em>S</em></strong> increasing long octives <strong><em>(- - -)</em></strong></summary>
+<summary>Morse Code <strong><em>S</em></strong> increasing long octaves <strong><em>(- - -)</em></strong></summary>
 <p><audio controls="controls">
   <source type="audio/mp3" src="../sounds/safety_off.mp3"></source>
 </audio></p>
 </details>
 <h4 id="safety-on-sound">Safety On Sound</h4>
 <details class="sound">
-<summary>Morse Code <strong><em>S</em></strong> decreasing long octives <strong><em>(- - -)</em></strong></summary>
+<summary>Morse Code <strong><em>S</em></strong> decreasing long octaves <strong><em>(- - -)</em></strong></summary>
 <p><audio controls="controls">
   <source type="audio/mp3" src="../sounds/safety_on.mp3"></source>
 </audio></p>

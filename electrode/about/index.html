@@ -1548,7 +1548,7 @@
 <p>Much like the name implies from the medical term, Electrode is the introspection and user interface to CogniPilot's <a href="../../cranium/about/">Cranium</a> and <a href="../../cerebri/about/">Cerebri</a>.</p>
 <p>Electrode is primarily a ROS 2 workspace that allows for controlling robotic platforms through either foxglove or RVIZ 2 backends.</p>
 <p>Electrode uses a <a href="#joy-input">joystick</a> whether (<a href="#foxglove-cognipilot-joystick-extension">virtual</a> or <a href="#example-of-using-electrode-with-a-physical-joystick-for-b3rb">physical</a>) to control platforms.</p>
-<p>Foxglove-studio is the <a href="#foxglove-studio-backend-for-electrode">reccomended backend for Electrode</a>.</p>
+<p>Foxglove-studio is the <a href="#foxglove-studio-backend-for-electrode">recommended backend for Electrode</a>.</p>
 <details class="question">
 <summary>Do I have to use a ROS 2 workspace based Electrode to control platforms?</summary>
 <p>No, there is a way to <a href="#using-electrode-without-a-ros-2-workspace">use Electrode with foxglove and the CogniPilot extensions on windows and linux</a> that only uses websockets and does not require ROS 2 to be present on the system.</p>
@@ -1556,7 +1556,7 @@
 <h2 id="foxglove-studio-backend-for-electrode">Foxglove-studio backend for Electrode.</h2>
 <p>By default Electrode uses foxglove-studio as the backend, for foxglove-studio to connect to a physical platform or simulation <code>foxglove_bridge</code> must be running first on the target system.</p>
 <h3 id="install-foxglove-studio-and-the-foxglove-cognipilot-joystick-extension">Install foxglove-studio and the <a href="#foxglove-cognipilot-joystick-extension">foxglove CogniPilot Joystick extension</a></h3>
-<p>Run the <code>build_foxglove</code> script after <a href="../../getting_started/install/">following initial develpment system setup</a> and <strong>follow the prompts</strong>.</p>
+<p>Run the <code>build_foxglove</code> script after <a href="../../getting_started/install/">following initial development system setup</a> and <strong>follow the prompts</strong>.</p>
 <div class="language-bash highlight"><span class="filename">Run build_foxglove script:</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>build_foxglove
 </span></code></pre></div>
 <p>Proceed to using Electrode with foxglove-studio with the platforms specific layout:</p>
@@ -1568,7 +1568,7 @@
 <p>Electrode can be optionally run with the RVIZ 2 backend, however, it requires a <a href="#example-of-using-electrode-with-a-physical-joystick-for-b3rb">physical joystick device</a> for input.
 <div class="language-bash highlight"><span class="filename">Electrode with RVIZ 2:</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>rviz2:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div>
-By defualt RVIZ 2 uses B3RB as the vehicle platform but can be changed with <code>vehicle:=&lt;platform-name&gt;</code></p>
+By default RVIZ 2 uses B3RB as the vehicle platform but can be changed with <code>vehicle:=&lt;platform-name&gt;</code></p>
 <ul>
 <li><a href="../../reference_systems/b3rb/electrode/#optionally-run-electrode-with-the-rviz-2-backend-for-b3rb">B3RB</a> </li>
 <li><a href="../../reference_systems/b3rb/simulation/#optionally-run-electrode-with-the-rviz-2-backend-for-b3rb-simulation">B3RB Simulation</a></li>
@@ -1629,7 +1629,7 @@ By defualt RVIZ 2 uses B3RB as the vehicle platform but can be changed with <cod
 <p>A physical Joystick can still be used with foxglove but it requires closing the <code>CogniPilot Joystick</code> panel that is automatically opened when importing a layout file like the <code>b3rb.json</code> layout and running electrode with <code>joy:=true</code>
 <div class="language-bash highlight"><span class="filename">Run Electrode with foxglove and physical joystick</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>joy:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div>
-<img alt="Remove CogniPilot Joystick extension from b3rb.json layout in foxglove." src="../images/foxglove_remove_b3rb_joy_extension.png" title="Remove CogniPilot Joystick extention from b3rb.json layout in foxglove." /></p>
+<img alt="Remove CogniPilot Joystick extension from b3rb.json layout in foxglove." src="../images/foxglove_remove_b3rb_joy_extension.png" title="Remove CogniPilot Joystick extension from b3rb.json layout in foxglove." /></p>
 </details>
 <h3 id="example-of-using-electrode-with-a-physical-joystick-for-b3rb">Example of using electrode with a physical joystick for B3RB.</h3>
 <p>While most physical joysticks on the market can be made to work with ROS 2, this example highlights a <a href="https://www.logitechg.com/en-us/products/gamepads/f310-gamepad.940-000110.html">Logitech F310</a>.</p>

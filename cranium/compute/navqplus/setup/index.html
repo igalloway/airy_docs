@@ -1619,7 +1619,7 @@
 <ol>
 <li><strong><a href="https://github.com/rudislabs/navqplus-images/releases/latest">Download the pre-built latest image</a></strong> with Ubuntu<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 22.04 and ROS 2<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> Humble, exact instructions for that release image are included on the <a href="https://github.com/rudislabs/navqplus-images/releases/latest">release documentation</a> to use in conjunction with this guide.</li>
 <li>Extract the image <code>navqplus-image-&lt;version&gt;.wic</code> from the compressed downloaded file <code>navqplus-image-&lt;version&gt;.wic.zstd</code> and flash it to the <a href="#flashing-the-emmc">EMMC</a>, <a href="https://github.com/rudislabs/navqplus-images/releases/latest">exact copy and paste instructions</a> are on the release page.</li>
-<li><a href="#log-in-for-the-first-time">Log in for the first time</a> by connecting to another computer using the <a href="#usb-to-uart-adapter">USB to UART adatper</a>, <a href="#ethernet">ethernet adapter</a> or <a href="#usb-c-gadget-ethernet">centermost (USB 2) USB-C® port</a>.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li><a href="#log-in-for-the-first-time">Log in for the first time</a> by connecting to another computer using the <a href="#usb-to-uart-adapter">USB to UART adapter</a>, <a href="#ethernet">ethernet adapter</a> or <a href="#usb-c-gadget-ethernet">centermost (USB 2) USB-C® port</a>.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
 <li><a href="#configuring-wifi-system-hostname-username-or-password">Configure WiFi, System User Name and Password.</a></li>
 <li><a href="#connecting-to-navqplus-over-wifi">Connect to NavQPlus over WiFi</a></li>
 <li><a href="#install-cognipilot-through-included-script">Install CogniPilot by running the included installer script.</a></li>
@@ -1645,7 +1645,7 @@
 <p>If it shows that a device is connected, continue to flashing. To flash the board, use the general command below or <a href="https://github.com/rudislabs/navqplus-images/releases/latest">copy and paste the specific command</a> from the release.</p>
 <div class="language-bash highlight"><span class="filename">Use uuu to flash eMMC with image:</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>./uuu<span class="w"> </span>-b<span class="w"> </span>emmc_all<span class="w"> </span>navqplus-image-&lt;version&gt;.bin-flash_evk<span class="w"> </span>navqplus-image-&lt;version&gt;.wic
 </span></code></pre></div>
-<p>Once this process has finished, make sure that the flash was successfull. If so, configure the <a href="#boot-switches">boot switches</a> to boot from eMMC.</p>
+<p>Once this process has finished, make sure that the flash was successful. If so, configure the <a href="#boot-switches">boot switches</a> to boot from eMMC.</p>
 <details class="picture">
 <summary>Successful eMMC flash.</summary>
 <p><img alt="Successful eMMC flash." src="../data/uuu_emmc.png" title="Flashed eMMC Successfully" /></p>
@@ -1684,7 +1684,7 @@
 </tbody>
 </table>
 <h2 id="log-in-for-the-first-time">Log in for the first time</h2>
-<p>Power on the NavQPlus by plugging in a USB-C® cable to the centermost (USB 2) USB-C® port or the 5 pin JST-GH power port if not powering over the centermost (USB 2) USB-C® port. NavQPlus will boot, and dispaly that it is fully booted with the status LEDs on board. The 3 LEDs by the USB1 port should be on, as well as two LEDs next to the CAN bus connectors.</p>
+<p>Power on the NavQPlus by plugging in a USB-C® cable to the centermost (USB 2) USB-C® port or the 5 pin JST-GH power port if not powering over the centermost (USB 2) USB-C® port. NavQPlus will boot, and display that it is fully booted with the status LEDs on board. The 3 LEDs by the USB1 port should be on, as well as two LEDs next to the CAN bus connectors.</p>
 <p>To log into NavQPlus, choose between using the <a href="#usb-to-uart-adapter">included USB to UART adapter</a>, <a href="#ethernet">Industrial Ethernet</a>, or <a href="#usb-c-gadget-ethernet">USB-C® with gadget ethernet mode</a>. The default username/password combo is as follows:</p>
 <p><strong>Username: user</strong></p>
 <p><strong>Password: user</strong></p>
@@ -1737,7 +1737,7 @@
 <p>To see what WiFi network the NavQPlus is currently connected to run previous command without <code>sudo</code>.</p>
 <div class="language-bash highlight"><span class="filename">Check current WiFi network NavQPlus is connected to:</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list
 </span></code></pre></div>
-<p>Or if running with <code>sudo</code> it will be the network preceeded with a star.</p>
+<p>Or if running with <code>sudo</code> it will be the network preceded with a star.</p>
 </details>
 <h3 id="optional-configuring-system-hostname-username-or-password">OPTIONAL - Configuring System Hostname, Username or Password</h3>
 <p>Optionally, to change the default hostname, username, or password, see below.</p>
@@ -1783,7 +1783,7 @@
 </details>
 <details class="tip" open="open">
 <summary>When prompted to choose whether or not to optimize runtime performance:</summary>
-<p><strong>It is reccomended to select <code>y</code> for runtime optimization when prompted.</strong></p>
+<p><strong>It is recommended to select <code>y</code> for runtime optimization when prompted.</strong></p>
 </details>
 <details class="tip" open="open">
 <summary>When prompted to choose a release:</summary>

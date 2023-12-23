@@ -1431,7 +1431,7 @@
 
 
 <h1 id="b3rb-simulation">B3RB Simulation</h1>
-<p>Simulation uses <a href="https://gazebosim.org/home">gazebo garden</a> to simulate sensors and physics in the <a href="../../../dream/worlds/worlds/">"dream" worlds</a> that connects to <a href="../../../cerebri/about/">Cerebri</a> running ontop Zephyr RTOS <code>native_sim</code>.</p>
+<p>Simulation uses <a href="https://gazebosim.org/home">gazebo garden</a> to simulate sensors and physics in the <a href="../../../dream/worlds/worlds/">"dream" worlds</a> that connects to <a href="../../../cerebri/about/">Cerebri</a> running on top of the Zephyr RTOS <code>native_sim</code>.</p>
 <h2 id="before-running-simulation">Before running simulation</h2>
 <p>Before running the simulation for the first time make sure to have first followed the <a href="../../../getting_started/install/">installation for development computer guide</a>. Once at <a href="../../../getting_started/install/#build-the-workspace">building the workspace</a> make sure to select <code>1. b3rb</code> for the platform. This will also build Cerebri for <code>native_sim</code> so the section below <strong><a href="#build-cerebri-for-native_sim">"Build Cerebri for <code>native_sim</code>"</a></strong> can be skipped if the <code>build_workspace</code> script was just run. If other images have been built in Cerebri since running the script make sure to follow <strong><a href="#build-cerebri-for-native_sim">"Build Cerebri for <code>native_sim</code>"</a></strong>. </p>
 <h2 id="build-cerebri-for-native_sim">Build Cerebri for <code>native_sim</code></h2>
@@ -1453,7 +1453,7 @@
 <summary>If using the foxglove backend for Electrode.</summary>
 <p>Make sure to have first followed instructions to <a href="../../../electrode/about/#install-foxglove-studio-and-the-foxglove-cognipilot-joystick-extension">install foxglove-studio and the foxglove CogniPilot Joystick extension</a>.</p>
 </details>
-<p>To visualize and control the simulated B3RB it is reccomended to understand the <a href="../../../electrode/about/">key concepts and backend options with Electrode</a>, the default Electrode backend is foxglove-studio.</p>
+<p>To visualize and control the simulated B3RB it is recommended to understand the <a href="../../../electrode/about/">key concepts and backend options with Electrode</a>, the default Electrode backend is foxglove-studio.</p>
 <h3 id="run-electrode-with-the-foxglove-studio-backend-for-b3rb-simulation">Run Electrode with the <a href="../electrode/">foxglove-studio backend for B3RB</a> simulation.</h3>
 <div class="language-bash highlight"><span class="filename">Electrode for simulation with foxglove:</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>electrode<span class="w"> </span>electrode.launch.py<span class="w"> </span>sim:<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div>
@@ -1495,7 +1495,7 @@ connect to it on <code>ws://localhost:8765</code>
 <p>If the simulation launch script is throwing an error about cerebri_bringup make sure that <a href="#build-cerebri-for-native_sim">cerebri is built, installed and sourced properly for <code>native_sim</code></a>.</p>
 </details>
 <div class="admonition tip">
-<p class="admonition-title"><strong>If running on a machine with a powerful graphics card optionally run the more gaphics intensive <a href="../../../dream/worlds/worlds/#depot-world">depot world</a>.</strong></p>
+<p class="admonition-title"><strong>If running on a machine with a powerful graphics card optionally run the more graphics intensive <a href="../../../dream/worlds/worlds/#depot-world">depot world</a>.</strong></p>
 <div class="language-bash highlight"><span class="filename">Launch simulation with depot world:</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>b3rb_gz_bringup<span class="w"> </span>sil.launch.py<span class="w"> </span>world:<span class="o">=</span>depot
 </span></code></pre></div>
 </div>
