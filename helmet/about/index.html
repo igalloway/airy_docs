@@ -875,6 +875,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -884,6 +895,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-helmet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloning Helmet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-using-native-install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploying using Native Install Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manually-building-the-workspace-for-software-in-the-loop-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manually building the Workspace for Software-in-the-loop Simulation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1238,6 +1304,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-helmet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloning Helmet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-using-native-install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploying using Native Install Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manually-building-the-workspace-for-software-in-the-loop-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manually building the Workspace for Software-in-the-loop Simulation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1255,6 +1365,36 @@
 
 
 <h1 id="helmet-overview">Helmet Overview</h1>
+<p><a href="https://github.com/cognipilot/helmet">Helmet</a> is the CogniPilot package distribution list, similar to <a href="https://github.com/ros/rosdistro">rosdistro</a>.</p>
+<h2 id="folders">Folders</h2>
+<ul>
+<li>dream: This folder contains the packages lists necessary for simulation.</li>
+<li>install: Used to hold the install scripts for deployment. These install scripts are also used for docker image creation.</li>
+<li>navqplus: Used to hold releveant packages for the onboard computer.</li>
+<li>read_only: Alternate urls for read only cloning using https instead of ssh.</li>
+</ul>
+<h2 id="cloning-helmet">Cloning Helmet</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>~/cognipilot
+</span></code></pre></div>
+<p>Cloning with ssh keys:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:CogniPilot/helmet.git
+</span></code></pre></div>
+<p>Cloning without ssh keys:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/CogniPilot/helmet.git
+</span></code></pre></div>
+<h2 id="deploying-using-native-install-script">Deploying using Native Install Script</h2>
+<p>Run the install script and follow the prompts.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./helmet/install/native_install.sh
+</span></code></pre></div>
+<h2 id="manually-building-the-workspace-for-software-in-the-loop-simulation">Manually building the Workspace for Software-in-the-loop Simulation</h2>
+<p>Helmet relies upon the vcs tool provided with ros. After adding the APT ROS reposities, it may be install via:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-vcstool
+</span></code></pre></div>
+<p>Now we can use vcs to import the relevant git repositories for our workspace.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>~/cognipilot
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>vcs<span class="w"> </span>import<span class="w"> </span>&lt;<span class="w"> </span>helmet/dream/base.yaml
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>vcs<span class="w"> </span>import<span class="w"> </span>&lt;<span class="w"> </span>helmet/dream/b3rb.yaml
+</span></code></pre></div>
 
 
 

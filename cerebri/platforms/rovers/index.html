@@ -456,6 +456,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Rovers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -465,6 +476,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#b3rb" class="md-nav__link">
+    <span class="md-ellipsis">
+      B3RB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B3RB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Source Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elm4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELM4
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1240,6 +1312,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#b3rb" class="md-nav__link">
+    <span class="md-ellipsis">
+      B3RB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B3RB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Source Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elm4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELM4
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1257,6 +1379,29 @@
 
 
 <h1 id="rovers-overview">Rovers Overview</h1>
+<p>CogniPilot Airy currently supports rovers navigating in 2D environments. The B3RB and the ELM4 are the rovers supported for this release. We will focus on the nodes that compose the B3RB.
+The <a href="https://github.com/CogniPilot/cerebri/tree/25497bf9960c6ca74e98c1709d34c756ac4395a9/app/b3rb">app/b3rb</a> folder contains all nodes.</p>
+<h2 id="b3rb">B3RB</h2>
+<h3 id="nodes">Nodes</h3>
+<ul>
+<li><strong>estimate.c</strong>: The estimation node uses 2D odometry and is meant to be integrated with a 2D LiDAR on the companion computer. It uses the wheel odometry and the z-axis gyroscope to predict the vehicle position. Using the z-axis gyro and integrating this means that the vehicle must be calibrated to achieve best performance, or angular drift will occur. This estimator does not include an online gyro bias estimation. The system automatically calibrates at boot, but if you have bumped the system, this can degrade performance. It is always best to calibrate before starting the advanced navigation stack on the onboard computer.</li>
+<li><strong>fsm.c</strong>: The Finite State Machine (FSM) node, manages the logic for arming and switching modes. It also publishes the vehicle status message that includes these modes and other important information regarding the vehicle fuel level (battery state), and the status of the safety switch.</li>
+<li><strong>lighting.c</strong>: The lighting node listens to the status messages published by the FSM and publishes an LED message to drive the lights.</li>
+<li><strong>manual.c</strong>: The manual node listens to the user joy input, through the ethernet link and publishes a corresponding synapse_msgs_Twist message.</li>
+<li><strong>position.c</strong>: The position node will publish a /cmd_vel synapse_msgs_Twist message.</li>
+<li><strong>velocity.c</strong>: The velocity node listens to /cmd_vel "Twist" message and sends commands to the motor and steering servo on the rover.</li>
+</ul>
+<h2 id="other-source-code">Other Source Code</h2>
+<ul>
+<li><strong>main.c</strong>: At boot displays the version and CogniPilot logo.</li>
+<li><strong>mixing.c</strong>: Mixing from /cmd_vel to Ackermann steering.</li>
+</ul>
+<h2 id="elm4">ELM4</h2>
+<p>The ELM4 is similar to the B3RB but instead of using Ackermann steering, it uses differential drive to steer.
+The ELM4 nodes are similar to the B3RB nodes. We will highlight any differences here.</p>
+<ul>
+<li><strong>mixing.c</strong>: Mixing from /cmd_vel to differential drive steering.</li>
+</ul>
 
 
 
