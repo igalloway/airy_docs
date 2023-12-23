@@ -1,10 +1,10 @@
 # B3RB Electrode Overview
 
-[Electrode](../../electrode/about.md) can be run with foxglove-studio or RVIZ 2 backends for the real and [simulated B3RB](./simulation.md). Foxglove-studio is the reccomended and default backend for Electrode.
+[Electrode](../../electrode/about.md) can be run with foxglove-studio or RVIZ 2 backends for the real and [simulated B3RB](./simulation.md). Foxglove-studio is the recommended and default backend for Electrode.
 
 Electrode uses a joystick ([virtual](../../electrode/about.md#foxglove-cognipilot-joystick-extension) or [physical](../../electrode/about.md#example-of-using-electrode-with-a-physical-joystick-for-b3rb)) to control the B3RB.
 
-To visualize and control the B3RB it is reccomended to understand the [key concepts and backend options with Electrode](../../electrode/about.md).
+To visualize and control the B3RB it is recommended to understand the [key concepts and backend options with Electrode](../../electrode/about.md).
 
 ## Using the default Electrode foxglove-studio backend with B3RB.
 

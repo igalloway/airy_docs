@@ -1,12 +1,12 @@
 # About Cerebri
 
-[Cerebri](https://github.com/cognipilot/cerebri/tree/airy) is a correct by construction autopilot. This software paradigm simplifies the verifcation and validation task through the consideration of ease of verification during code creation.
+[Cerebri](https://github.com/cognipilot/cerebri/tree/airy) is a correct by construction autopilot. This software paradigm simplifies the verification and validation task through the consideration of ease of verification during code creation.
 
-The verification approach relies on the faithful synthesis of mathematical control laws for a given vehicle dynamic model interacting with a finite state machine. A layered approach is used to ensure robustness of the sytem.
+The verification approach relies on the faithful synthesis of mathematical control laws for a given vehicle dynamic model interacting with a finite state machine. A layered approach is used to ensure robustness of the system.
 
-### Layers of Verificaiton and Validation
+### Layers of Verification and Validation
 
-* MISRA C compliance. Follow closely the industry best practices as defined in the [MISRA C](https://en.wikipedia.org/wiki/MISRA_C) standard. The verification of the high levels of system operation use the low level operating system and drivers as a foundation.
+* MISRA C compliance. Developers follow closely the industry best practices as defined in the [MISRA C](https://en.wikipedia.org/wiki/MISRA_C) standard. The verification of the high levels system operation relies upon then low level operating system and drivers as a foundation.
 * On top of the the solid operating system and drivers, create control and estimation methods that interact with a given dynamic model. For interested readers, see this [paper](https://arxiv.org/abs/2211.03310) of one such robust control strategy.
 
 ## ZROS Publish and Subscribe Library
@@ -21,7 +21,7 @@ After considering both the [rclc](https://github.com/ros2/rclc) library and [ZBU
 | ZBUS    | yes         | yes     | small          | no                        | 1409 |
 | ZROS    | yes         | yes     | new library    | yes                       | 748  |
 
-While Cerebri was initially built around ZBUS, it was found too limiting due to the available topic listener and subscriber implementations. Instead of providing callback functions where the topic data structure is in context, ZROS signals the subscribers that a new message is availabe. It is then up to the subscriber to process the data. This is similar to a ZBUS subscriber, but it uses signals instead of message queues. In ZROS, it is imperative that the latest sensor data is available to each node, but skipping packets between nodes is acceptable. All messages describing the state of the vehicle are stateful, so dropping one message is not critical. This is also the goal for all input to the system. It should be assuemd that packets will be lost, and the requests of the user should be a state that is continually sent at a periodic rate.
+While Cerebri was initially built around ZBUS, it was found too limiting due to the available topic listener and subscriber implementations. Instead of providing callback functions where the topic data structure is in context, ZROS signals the subscribers that a new message is available. It is then up to the subscriber to process the data. This is similar to a ZBUS subscriber, but it uses signals instead of message queues. In ZROS, it is imperative that the latest sensor data is available to each node, but skipping packets between nodes is acceptable. All messages describing the state of the vehicle are stateful, so dropping one message is not critical. This is also the goal for all input to the system. It should be assuemd that packets will be lost, and the requests of the user should be a state that is continually sent at a periodic rate.
 
 Cerebri is constructed using a set of reusable nodes. These nodes communicate using topics. ZROS is thread-safe and leverages a read semaphore and a write mutex lock on each topic. This allows multiple subscribers to read the data simultaneously.
 
