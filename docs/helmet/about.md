@@ -6,7 +6,7 @@
 
 * dream: This folder contains the packages lists necessary for simulation.
 * install: Used to hold the install scripts for deployment. These install scripts are also used for docker image creation.
-* navqplus: Used to hold releveant packages for the onboard computer.
+* navqplus: Used to hold relevant packages for the onboard computer.
 * read\_only: Alternate urls for read only cloning using https instead of ssh.
 
 ## Cloning Helmet

@@ -26,7 +26,7 @@ If planning to develop and make changes to code it is suggested to set up ssh ke
 ## Use CogniPilot universal installer
 ??? info "Using Docker instead."
 
-    If preffering to use docker, there is a [Docker Development Container](advanced/docker.md) that may be used instead.
+    If preferring to use docker, there is a [Docker Development Container](advanced/docker.md) that may be used instead.
 
 To install CogniPilot on a system download the universal installer and run it (**follow the prompts in the installer**).
 

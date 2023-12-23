@@ -15,7 +15,7 @@
  
 1. **[Download the pre-built latest image](https://github.com/rudislabs/navqplus-images/releases/latest)** with Ubuntu[^1] 22.04 and ROS 2[^3] Humble, exact instructions for that release image are included on the [release documentation](https://github.com/rudislabs/navqplus-images/releases/latest) to use in conjunction with this guide.
 2. Extract the image `navqplus-image-<version>.wic` from the compressed downloaded file `navqplus-image-<version>.wic.zstd` and flash it to the [EMMC](#flashing-the-emmc), [exact copy and paste instructions](https://github.com/rudislabs/navqplus-images/releases/latest) are on the release page.
-3. [Log in for the first time](#log-in-for-the-first-time) by connecting to another computer using the [USB to UART adatper](#usb-to-uart-adapter), [ethernet adapter](#ethernet) or [centermost (USB 2) USB-C® port](#usb-c-gadget-ethernet).[^2]
+3. [Log in for the first time](#log-in-for-the-first-time) by connecting to another computer using the [USB to UART adapter](#usb-to-uart-adapter), [ethernet adapter](#ethernet) or [centermost (USB 2) USB-C® port](#usb-c-gadget-ethernet).[^2]
 4. [Configure WiFi, System User Name and Password.](#configuring-wifi-system-hostname-username-or-password)
 5. [Connect to NavQPlus over WiFi](#connecting-to-navqplus-over-wifi)
 6. [Install CogniPilot by running the included installer script.](#install-cognipilot-through-included-script)
@@ -53,7 +53,7 @@ If it shows that a device is connected, continue to flashing. To flash the board
 sudo ./uuu -b emmc_all navqplus-image-<version>.bin-flash_evk navqplus-image-<version>.wic
 ```
 
-Once this process has finished, make sure that the flash was successfull. If so, configure the [boot switches](#boot-switches) to boot from eMMC.
+Once this process has finished, make sure that the flash was successful. If so, configure the [boot switches](#boot-switches) to boot from eMMC.
 
 ??? picture "Successful eMMC flash."
 
@@ -77,7 +77,7 @@ NavQPlus can be configured to boot from either SD card or eMMC. It also has a fl
 
 ## Log in for the first time
 
-Power on the NavQPlus by plugging in a USB-C® cable to the centermost (USB 2) USB-C® port or the 5 pin JST-GH power port if not powering over the centermost (USB 2) USB-C® port. NavQPlus will boot, and dispaly that it is fully booted with the status LEDs on board. The 3 LEDs by the USB1 port should be on, as well as two LEDs next to the CAN bus connectors.
+Power on the NavQPlus by plugging in a USB-C® cable to the centermost (USB 2) USB-C® port or the 5 pin JST-GH power port if not powering over the centermost (USB 2) USB-C® port. NavQPlus will boot, and display that it is fully booted with the status LEDs on board. The 3 LEDs by the USB1 port should be on, as well as two LEDs next to the CAN bus connectors.
 
 To log into NavQPlus, choose between using the [included USB to UART adapter](#usb-to-uart-adapter), [Industrial Ethernet](#ethernet), or [USB-C® with gadget ethernet mode](#usb-c-gadget-ethernet). The default username/password combo is as follows:
 
@@ -157,7 +157,7 @@ Once connected to the WiFi network the NavQPlus will continue to connect to that
     nmcli device wifi list
     ```
 
-    Or if running with `sudo` it will be the network preceeded with a star.
+    Or if running with `sudo` it will be the network preceded with a star.
 
 ### OPTIONAL - Configuring System Hostname, Username or Password
 
@@ -215,7 +215,7 @@ In the home directory there is a simple helper script that downloads and runs th
 
 ???+ tip "When prompted to choose whether or not to optimize runtime performance:"
 
-    **It is reccomended to select `y` for runtime optimization when prompted.**
+    **It is recommended to select `y` for runtime optimization when prompted.**
 
 ???+ tip "When prompted to choose a release:"
 

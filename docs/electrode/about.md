@@ -6,7 +6,7 @@ Electrode is primarily a ROS 2 workspace that allows for controlling robotic pla
 
 Electrode uses a [joystick](#joy-input) whether ([virtual](#foxglove-cognipilot-joystick-extension) or [physical](#example-of-using-electrode-with-a-physical-joystick-for-b3rb)) to control platforms.
 
-Foxglove-studio is the [reccomended backend for Electrode](#foxglove-studio-backend-for-electrode).
+Foxglove-studio is the [recommended backend for Electrode](#foxglove-studio-backend-for-electrode).
 
 ??? question "Do I have to use a ROS 2 workspace based Electrode to control platforms?"
 
@@ -19,7 +19,7 @@ By default Electrode uses foxglove-studio as the backend, for foxglove-studio to
 
 ### Install foxglove-studio and the [foxglove CogniPilot Joystick extension](#foxglove-cognipilot-joystick-extension)
 
-Run the `build_foxglove` script after [following initial develpment system setup](../getting_started/install.md) and **follow the prompts**.
+Run the `build_foxglove` script after [following initial development system setup](../getting_started/install.md) and **follow the prompts**.
 
 ```bash title="Run build_foxglove script:"
 build_foxglove
@@ -37,7 +37,7 @@ Electrode can be optionally run with the RVIZ 2 backend, however, it requires a 
 ```bash title="Electrode with RVIZ 2:"
 ros2 launch electrode electrode.launch.py rviz2:=true
 ```
-By defualt RVIZ 2 uses B3RB as the vehicle platform but can be changed with `vehicle:=<platform-name>`
+By default RVIZ 2 uses B3RB as the vehicle platform but can be changed with `vehicle:=<platform-name>`
 
 * [B3RB](../reference_systems/b3rb/electrode.md#optionally-run-electrode-with-the-rviz-2-backend-for-b3rb) 
 * [B3RB Simulation](../reference_systems/b3rb/simulation.md#optionally-run-electrode-with-the-rviz-2-backend-for-b3rb-simulation)
@@ -107,7 +107,7 @@ The foxglove CogniPilot Joystick extension allows users to control a platform wi
     ```bash title="Run Electrode with foxglove and physical joystick"
     ros2 launch electrode electrode.launch.py joy:=true
     ```
-    ![Remove CogniPilot Joystick extension from b3rb.json layout in foxglove.](images/foxglove_remove_b3rb_joy_extension.png "Remove CogniPilot Joystick extention from b3rb.json layout in foxglove.")
+    ![Remove CogniPilot Joystick extension from b3rb.json layout in foxglove.](images/foxglove_remove_b3rb_joy_extension.png "Remove CogniPilot Joystick extension from b3rb.json layout in foxglove.")
 
 ### Example of using electrode with a physical joystick for B3RB.
 
