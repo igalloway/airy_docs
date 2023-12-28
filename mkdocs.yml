@@ -88,6 +88,7 @@ nav:
       - B3RB:
         - About: reference_systems/b3rb/about.md
         - Hardware Overview: reference_systems/b3rb/hardware.md
+        - Printable Parts: reference_systems/b3rb/printable.md
         - Setting up the System: reference_systems/b3rb/setup.md
         - Status Lighting and Sounds: reference_systems/b3rb/status.md
         - Using with Electrode: reference_systems/b3rb/electrode.md
