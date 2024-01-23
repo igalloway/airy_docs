@@ -15,11 +15,15 @@ You must install the latest official docker.
 
 ## Clone Docker Repository
 
+When cloning the docker repository, choose the name of `<BRANCH>` to be one of:
+* main
+* airy
+
 <span style="color:blue">On the Host</span>
 ```bash
 mkdir -p ~/cognipilot
 cd ~/cognipilot
-git clone https://github.com/cognipilot/docker
+git clone -b <BRANCH> https://github.com/cognipilot/docker
 cd  ~/cognipilot/docker
 git submodule update --init --recursive
 ```
