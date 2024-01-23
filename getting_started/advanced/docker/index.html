@@ -1348,10 +1348,13 @@
 <p>Don't forget <a href="https://docs.docker.com/engine/install/linux-postinstall/">Linux Post Install</a> </p>
 </div>
 <h2 id="clone-docker-repository">Clone Docker Repository</h2>
+<p>When cloning the docker repository, choose the name of <code>&lt;BRANCH&gt;</code> to be one of:
+* main
+* airy</p>
 <p><span style="color:blue">On the Host</span>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/cognipilot
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/cognipilot
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/cognipilot/docker
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>&lt;BRANCH&gt;<span class="w"> </span>https://github.com/cognipilot/docker
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w">  </span>~/cognipilot/docker
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </span></code></pre></div></p>
