@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/CogniPilotLogoFavicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1350,7 +1350,7 @@
 
 
 <h1 id="dream-worlds-overview">Dream Worlds Overview</h1>
-<p>Run the desired simulated world in <a href="https://gazebosim.org/home">gazebo garden</a> by appending <code>world:=&lt;desired-world-name&gt;</code> to the simulation launch script.</p>
+<p>Run the desired simulated world in <a href="https://gazebosim.org/home">gazebo harmonic</a> by appending <code>world:=&lt;desired-world-name&gt;</code> to the simulation launch script.</p>
 <h2 id="depot-world">Depot World</h2>
 <p>To use depot world append <code>world:=depot</code> to the simulation launch script.</p>
 <details class="picture" open="open">
@@ -1367,7 +1367,7 @@
 <summary>How do I add a different world?</summary>
 <ul>
 <li>It is very easy to add other worlds to dream for use in simulation, there are only a few things to keep in mind:<ol>
-<li>Make sure the desired <a href="https://app.gazebosim.org/fuel/models">model assets</a> work correctly in Gazebo Garden <a href="https://github.com/CogniPilot/dream_world/blob/0c66b82914e5536cc8a0511ead9eacf1c025db07/models/Depot/model.sdf#L2">(this includes checking the SDF version)</a></li>
+<li>Make sure the desired <a href="https://app.gazebosim.org/fuel/models">model assets</a> work correctly in Gazebo Harmonic <a href="https://github.com/CogniPilot/dream_world/blob/0c66b82914e5536cc8a0511ead9eacf1c025db07/models/Depot/model.sdf#L2">(this includes checking the SDF version)</a></li>
 <li>Add the worlds model assets to <code>dream_world/models/&lt;model name&gt;</code></li>
 <li>Create a unique named world sdf file in <code>dream_world/worlds/</code></li>
 <li>Make sure the world name stays as <a href="https://github.com/CogniPilot/dream_world/blob/0c66b82914e5536cc8a0511ead9eacf1c025db07/worlds/depot.sdf#L3"><code>default</code></a> so the sensors can be properly mapped through the ros_gz bridge.</li>
