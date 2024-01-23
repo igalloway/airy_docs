@@ -1,6 +1,6 @@
 # B3RB Simulation
 
-Simulation uses [gazebo garden](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to [Cerebri](../../cerebri/about.md) running on top of the Zephyr RTOS `native_sim`.
+Simulation uses [gazebo harmonic](https://gazebosim.org/home) to simulate sensors and physics in the ["dream" worlds](../../dream/worlds/worlds.md) that connects to [Cerebri](../../cerebri/about.md) running on top of the Zephyr RTOS `native_sim`.
 
 ## Before running simulation
 

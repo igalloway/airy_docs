@@ -21,7 +21,7 @@ CogniPilot is not aiming to re-invent an opensource autopilot that can be a drop
 * Ubuntu 22.04
 * Zephyr RTOS 3.5
 * ROS 2 Humble
-* Gazebo Garden
+* Gazebo Harmonic
 
 ## Currently supported platforms
 

@@ -1,6 +1,6 @@
 # Dream Worlds Overview
 
-Run the desired simulated world in [gazebo garden](https://gazebosim.org/home) by appending `world:=<desired-world-name>` to the simulation launch script.
+Run the desired simulated world in [gazebo harmonic](https://gazebosim.org/home) by appending `world:=<desired-world-name>` to the simulation launch script.
 
 ## Depot World
 
@@ -21,7 +21,7 @@ To use basic map world append `world:=basic_map` to the simulation launch script
 ??? question "How do I add a different world?"
 
 	* It is very easy to add other worlds to dream for use in simulation, there are only a few things to keep in mind:
-		1. Make sure the desired [model assets](https://app.gazebosim.org/fuel/models) work correctly in Gazebo Garden [(this includes checking the SDF version)](https://github.com/CogniPilot/dream_world/blob/0c66b82914e5536cc8a0511ead9eacf1c025db07/models/Depot/model.sdf#L2)
+		1. Make sure the desired [model assets](https://app.gazebosim.org/fuel/models) work correctly in Gazebo Harmonic [(this includes checking the SDF version)](https://github.com/CogniPilot/dream_world/blob/0c66b82914e5536cc8a0511ead9eacf1c025db07/models/Depot/model.sdf#L2)
 		2. Add the worlds model assets to `dream_world/models/<model name>`
 		3. Create a unique named world sdf file in `dream_world/worlds/`
 		4. Make sure the world name stays as [`default`](https://github.com/CogniPilot/dream_world/blob/0c66b82914e5536cc8a0511ead9eacf1c025db07/worlds/depot.sdf#L3) so the sensors can be properly mapped through the ros_gz bridge.
