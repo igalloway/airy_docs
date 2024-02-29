@@ -14,6 +14,9 @@
 ## Step-by-step overview
  
 1. **[Download the pre-built latest image](https://github.com/rudislabs/navqplus-images/releases/latest)** with Ubuntu[^1] 22.04 and ROS 2[^3] Humble, exact instructions for that release image are included on the [release documentation](https://github.com/rudislabs/navqplus-images/releases/latest) to use in conjunction with this guide.
+   
+Link to latest image: `https://github.com/rudislabs/navqplus-images/releases/latest`
+
 2. Extract the image `navqplus-image-<version>.wic` from the compressed downloaded file `navqplus-image-<version>.wic.zstd` and flash it to the [EMMC](#flashing-the-emmc), [exact copy and paste instructions](https://github.com/rudislabs/navqplus-images/releases/latest) are on the release page.
 3. [Log in for the first time](#log-in-for-the-first-time) by connecting to another computer using the [USB to UART adapter](#usb-to-uart-adapter), [ethernet adapter](#ethernet) or [centermost (USB 2) USB-C® port](#usb-c-gadget-ethernet).[^2]
 4. [Configure WiFi, System User Name and Password.](#configuring-wifi-system-hostname-username-or-password)
